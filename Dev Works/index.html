@@ -1,4 +1,3 @@
-<!--test-->
 <!doctype html>
 <html lang="en">
     <head>
@@ -39,12 +38,12 @@
                             <li class="nav-item"><a class="nav-link" href="accomodation.html">Accomodation</a></li>
                             <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                             <li class="nav-item submenu dropdown">
-                                <a rel="noopener noreferrer" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                               <!-- <a rel="noopener noreferrer" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                                     <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
                                 </ul>
-                            </li> 
+                            </li> -->
                             <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         </ul>
@@ -60,10 +59,11 @@
             	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<h6>Away from monotonous life</h6>
-						<h2>Relax Your Mind</h2>
-						<p>If you are looking at blank cassettes on the web, you may be very confused at the<br> difference in price. You may see some for as low as $.17 each.</p>
-						<a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Get Started</a>
+						<h5>Ideal for Seminars, Workshops, and More</h5>
+						<h2>Book The Seminar Hall for Your Next Event</h2>
+						<p>Memories and lessons from our seminars last long. The seminar hall is a place for learning and inspiration.</p>
+                        <!--<h5> To Explore Availability</h5><br>-->
+						<a rel="noopener noreferrer" href="/login.html" class="btn theme_btn button_hover">Get Started</a>
 					</div>
 				</div>
             </div>
@@ -71,47 +71,58 @@
                 <div class="container">
                     <div class="hotel_booking_table">
                         <div class="col-md-3">
-                            <h2>Book<br> Your Room</h2>
+                            <h2>Book<br> Your <br>
+                               seminar Hall</h2>
                         </div>
                         <div class="col-md-9">
                             <div class="boking_table">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="book_tabel_item">
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <div class='input-group date' id='datetimepicker11'>
-                                                    <input type='text' class="form-control" placeholder="Arrival Date"/>
+                                                    <input type='text' class="form-control" placeholder="Schedule Date"/>
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                                     </span>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="form-group">
                                                 <div class='input-group date' id='datetimepicker1'>
-                                                    <input type='text' class="form-control" placeholder="Departure Date"/>
+                                                    <input type='text' class="form-control" placeholder="Schedule Date"/>
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="input-group">
+                                                <select  title="select"class="wide">
+                                                    <option data-display="Event">Event</option>
+                                                    <option value="1">Academic Events</option>
+                                                    <option value="2">Cultural Events</option>
+                                                    <option value="3">Tech Events</option>
+                                                    <option value="4">Administrative Events</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-md-4">
                                         <div class="book_tabel_item">
                                             <div class="input-group">
                                                 <select  title="select"class="wide">
-                                                    <option data-display="Adult">Adult</option>
-                                                    <option value="1">Old</option>
-                                                    <option value="2">Younger</option>
-                                                    <option value="3">Potato</option>
+                                                    <option data-display="Time">Time</option>
+                                                    <option value="1">Morning</option>
+                                                    <option value="2">Afternoon</option>
+                                                    <!--<option value="3">Potato</option>-->
                                                 </select>
                                             </div>
                                             <div class="input-group">
                                                 <select  title="select"class="wide">
-                                                    <option data-display="Child">Child</option>
-                                                    <option value="1">Child</option>
+                                                    <option data-display="Faculty">Faculty</option>
+                                                    <!--<option value="1">Child</option>
                                                     <option value="2">Baby</option>
-                                                    <option value="3">Child</option>
+                                                    <option value="3">Child</option>-->
                                                 </select>
                                             </div>
                                         </div>
@@ -120,13 +131,19 @@
                                         <div class="book_tabel_item">
                                             <div class="input-group">
                                                 <select  title="select"class="wide">
-                                                    <option data-display="Child">Number of Rooms</option>
-                                                    <option value="1">Room 01</option>
-                                                    <option value="2">Room 02</option>
-                                                    <option value="3">Room 03</option>
+                                                    <option data-display="Dept">Department</option>
+                                                
+                                                    <option value="1">CSE</option>
+                                                    <option value="2">ECE</option>
+                                                    <option value="3">AIML</option>
+                                                    <option value="4">ICB</option>
+                                                    <option value="5">AIDS</option>
+                                                    <option value="6">ISE</option>
+                                                    <option value="7">CIVIL</option>
+                                                    <option value="8">MECH</option>
                                                 </select>
                                             </div>
-                                            <a class="book_now_btn button_hover" href="#">Book Now</a>
+                                            <a class="book_now_btn button_hover" href="/booking.html">Book Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -142,8 +159,8 @@
         <section class="accomodation_area section_gap">
             <div class="container">
                 <div class="section_title text-center">
-                    <h2 class="title_color">Hotel Accomodation</h2>
-                    <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, </p>
+                    <h2 class="title_color">Seminar Halls</h2>
+                    <p>Host impactful events and inspiring sessions in our fully equipped seminar hall.</p>
                 </div>
                 <div class="row mb_30">
                     <div class="col-lg-3 col-sm-6">
@@ -152,8 +169,8 @@
                                 <img src="image/room1.jpg" alt="">
                                 <a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Double Deluxe Room</h4></a>
-                            <h5>$250<small>/night</small></h5>
+                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Seminar Hall 1</h4></a>
+                            <h4>Capacity : 150<!--150<small>/night</small>--></h5>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -162,8 +179,8 @@
                                 <img src="image/room2.jpg" alt="">
                                 <a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Single Deluxe Room</h4></a>
-                            <h5>$200<small>/night</small></h5>
+                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Seminar Hall 2</h4></a>
+                            <h4>Capacity : 150<!--<small>/night</small>--></h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -172,8 +189,8 @@
                                 <img src="image/room3.jpg" alt="">
                                 <a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Honeymoon Suit</h4></a>
-                            <h5>$750<small>/night</small></h5>
+                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Seminar Hall 3</h4></a>
+                            <h4>Capacity : 300 <!--<small>/night</small>--></h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -182,8 +199,8 @@
                                 <img src="image/room4.jpg" alt="">
                                 <a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Economy Double</h4></a>
-                            <h5>$200<small>/night</small></h5>
+                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Seminar Hall 4</h4></a>
+                            <h4>Capacity : 300<!--<small>/night</small>--></h4>
                         </div>
                     </div>
                 </div>
@@ -261,8 +278,9 @@
         </section>
         <!--================ About History Area  =================-->
         
-        <!--================ Testimonial Area  =================-->
-        <section class="testimonial_area section_gap">
+      
+          <!--================ Testimonial Area  =================-->
+        <!--<section class="testimonial_area section_gap">
             <div class="container">
                 <div class="section_title text-center">
                     <h2 class="title_color">Testimonial from our Clients</h2>
@@ -327,11 +345,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!--================ Testimonial Area  =================-->
         
         <!--================ Latest Blog Area  =================-->
-        <section class="latest_blog_area section_gap">
+       <!-- <section class="latest_blog_area section_gap">
             <div class="container">
                 <div class="section_title text-center">
                     <h2 class="title_color">latest posts from blog</h2>
@@ -388,7 +406,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!--================ Recent Area  =================-->
         
         <!--================ start footer Area  =================-->	
