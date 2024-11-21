@@ -9,10 +9,12 @@
     &:before{
         background: #f8b100;
     }
+
     &:hover{
         color: #fff;
-    }
+    }   
 }
+
 .white_btn{
 	background: #fff;
 	padding: 0px 40px;
@@ -22,6 +24,7 @@
 	font-family: $pop;
 	font-weight: 500;
 }
+
 .button_hover{
     border-radius: 0px;
     position: relative;
@@ -44,6 +47,7 @@
         transition: all 0.3s linear;
 		opacity: 0;
     }
+
     &:hover{
         color: #fff;
         &:before{
@@ -52,7 +56,6 @@
         }
     }
 }
-
 .theme_btn_two{
     font-size: 14px;
     font-weight: 500;
@@ -62,7 +65,6 @@
     text-transform: uppercase;
     padding: 5px 29px;
 }
-
 .book_now_btn{
     width: 100%;
     display: block;

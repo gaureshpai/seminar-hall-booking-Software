@@ -8,6 +8,7 @@
         background: url("../image/banner_bg.jpg") no-repeat scroll center 0 / cover;
         opacity: 0.50;
     }
+
     .position{
         width: 100%;
         bottom: 0;
@@ -15,12 +16,14 @@
         position: absolute;
     }
 }
+
 .booking_table{
 	position: relative;
 	overflow: hidden;
 	width: 100%;
 	min-height: 800px;
 }
+
 .overlay{
     position: absolute;
     left: 0;
@@ -30,6 +33,7 @@
     bottom: 0;
     z-index: -1;
 }
+
 .banner_content{
     color: #fff;
     margin-bottom: 94px;
@@ -40,11 +44,13 @@
         letter-spacing: 1.4px;
         font-weight: 400;
     }
+
     h2{
         font-size: 60px;
         line-height: 60px;
         font-weight: 700;
     }
+
     p{
         font-weight: 300;
         font-size: 14px;
@@ -52,11 +58,13 @@
         padding: 10px 0px 20px;
     }
 }
+
 /*============= End banner_area css =============*/
 
 .hotel_booking_area{
     
 }
+
 .hotel_booking_table{
     background: #04091e;
     align-items: center;
@@ -69,9 +77,11 @@
         text-transform: uppercase;
     }
 }
+
 .boking_table{
     margin-left: -50px;
 }
+
 .book_tabel_item{
     .form-group{
         margin-bottom: 0px;
@@ -90,11 +100,14 @@
                 @include placeholder{
                     color: #777777;
                 }
+
                 &:focus{
                     outline: none;
                     box-shadow: none;
                 }
+
             }
+
             .input-group-addon{
                 background: transparent;
                 padding: 0px;
@@ -106,11 +119,14 @@
                 color: #777777;
                 z-index: 2;
             }
-        }
+
+        } 
     }
+
     .input-group{
         margin-bottom: 10px;
     }
+
     .nice-select{
         background: transparent;
         border-radius: 0px;
@@ -130,10 +146,9 @@
             right: 20px;
             transform: rotate(0);
             transform-origin: 0 0;
-        }
+        } 
     }
 }
-
 /*=========== breadcrumb_area css =============*/
 .breadcrumb_area{
     position: relative;
@@ -147,12 +162,14 @@
         z-index: -1;
     }
 }
+
 .page-cover-tittle{
     display: block;
     font-size: 36px;
     line-height: 45px;
     color: #fff;
 }
+
 .breadcrumb{
     text-align: center;
     background: transparent;
@@ -164,6 +181,7 @@
         a{
             color: #fff;
         }
+
         & + li{
             &:before{
                 content: "\e87a";
@@ -173,10 +191,10 @@
                 vertical-align: middle;
                 margin: 0px 10px 0px 7px;
             }
-        }
+
+        } 
     }
 }
-
 
 /*============= End banner_area css =============*/
 
@@ -187,6 +205,7 @@
 	.bg-parallax{
 		background: url(../image/banner/banner-1.jpg) no-repeat scroll center center;
 	}
+
 	.banner_content{
         margin-bottom: 0px;
         margin-top: 106px;
@@ -197,24 +216,29 @@
 			color: #fff;
 			font-family: $pop;
 		}
+
 		p{
 			font-size: 16px;
 			padding: 0px;
 			margin-bottom: 35px;
 		}
+
 	}
+
 }
+
 .f_48{
     font-size: 48px;
     line-height: 60px;
     font-weight: 700;
 }
-
 .blog_banner_two{
     padding: 187px 0px 104px;
     .bg-parallax{
 		background: url(../image/banner/banner-2.jpg) no-repeat scroll center top / cover;
 	}
+
 }
+
 /*=============End Blog Banner css =============*/
 

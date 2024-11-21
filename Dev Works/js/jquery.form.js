@@ -840,8 +840,6 @@ function captureSubmittingElement(e) {
     // clear form vars
     setTimeout(function() { form.clk = form.clk_x = form.clk_y = null; }, 100);
 }
-
-
 // ajaxFormUnbind unbinds the event handlers that were bound by ajaxForm
 $.fn.ajaxFormUnbind = function() {
     return this.unbind('submit.form-plugin click.form-plugin');

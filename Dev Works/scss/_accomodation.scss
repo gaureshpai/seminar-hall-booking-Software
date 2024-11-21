@@ -1,5 +1,6 @@
 .accomodation_area{
 }
+
 .accomodation_item{
     margin-bottom: 30px;
     .hotel_img{
@@ -10,6 +11,7 @@
         img{
             transition: all 0.4s linear;
         }
+
         .theme_btn{
             position: absolute;
             bottom: 20px;
@@ -18,12 +20,15 @@
             padding: 5px 25px;
             max-width: 128px;
         }
+
         &:hover{
             img{
                 transform: scale(1.19);
             }
-        }
+
+        } 
     }
+
     h5{
         font-size: 24px;
         line-height: 28px;
@@ -33,9 +38,10 @@
         small{
             font-weight: 300;
             font-size: 14px;
-        }
+        } 
     }
 }
+
 .sec_h4{
     font-size: 18px;
     line-height: 38px;
@@ -43,14 +49,12 @@
     color: $dark;
     margin-bottom: 0px;
 }
-
 .accomodation_two{
     margin-bottom: -40px;
     .accomodation_item{
         margin-bottom: 45px;
     }
 }
-
 /*=========== Start facilities_area css =============*/
 .facilities_area{
     position: relative;
@@ -62,6 +66,7 @@
         opacity: 0.15;
     }
 }
+
 .facilities_item{
     border:1px solid #777777;
     border-radius: 10px;
@@ -79,14 +84,16 @@
             display: inline-block;
             vertical-align: bottom;
             padding-right: 20px;
-        }
+        } 
     }
+
     p{
         font-size: 14px;
         line-height: 24px;
         margin-bottom: 0px;
     }
 }
+
 /*=========== End facilities_area css =============*/
 
 /*=========== Start about_history_area css =============*/
@@ -96,6 +103,7 @@
         padding: 18px 0px 30px;
     }
 }
+
 /*=========== End about_history_area css =============*/
 
 
@@ -104,6 +112,7 @@
     img{
         max-width: 100%;
     }
+
 	.gallery_img{
 		position: relative;
 		.hover{
@@ -127,11 +136,16 @@
 				transform: translateY(-50%);
 				color: #fff;
 			}
+
 		}
+
 		&:hover{
 			.hover{
 				opacity: 1;
 			}
+
 		}
+
 	}
+
 }

@@ -15,19 +15,22 @@
         &:hover{
           color:$yellow;
         }
+
     }
+
     ul{
         padding-left: 0px;
         margin-bottom: 0px;
     }
+
     ul li{
         display:inline-block;
         margin-right: 15px;
         @media(max-width:414px){
             margin-right:0px;
         }
-    }
 
+    }
     .header-top-left{
         a{
             margin-right:8px;
@@ -36,8 +39,8 @@
             line-height: 20px;
             display: inline-block;
         }
-    }
 
+    }
     .header-top-right{
         text-align: right;
         .header-social{
@@ -49,23 +52,26 @@
                 &:hover{
                     color:$yellow;
                 }
+
             }
+
         }
+
     }
-
 }
-
 .navbar{
     padding: 0px;
     border:0px;
     border-radius: 0px;
 }
+
 .navbar{
     background: #fff;
     padding: 0px 25px;
     .logo_h{
         padding-top: 0px;
     }
+
     .menu_nav{
         .nav-item{
             .nav-link{
@@ -76,12 +82,16 @@
                 &:after{
                     display: none;
                 }
+
             }
+
             &:hover, &.active{
                 .nav-link{
                     color: $light_blue;
                 }
+
             }
+
             &.submenu{
                 position: relative;
                 ul{
@@ -105,6 +115,7 @@
                         padding: 0px;
                         border-radius: 0px;
                     }
+
                     &:before{
                         content: "";
                         width: 0;
@@ -119,6 +130,7 @@
                         opacity: 0;
                         transition: all 400ms linear;
                     }
+
                     .nav-item{
                         display: block;
                         float: none;
@@ -130,6 +142,7 @@
 						@media( min-width:992px){
 							margin-top: 10px;
 						}
+
                         .nav-link{
                             line-height: 45px;
                             color: $dark;
@@ -137,36 +150,48 @@
                             transition: all 150ms linear;
                             display: block;
                         }
+
                         &:last-child{
                             border-bottom: none;
                         }
+
                         &:hover{
                             .nav-link{
                                 background: #f0f0f0;
                                 color: $light_blue;
                             }
-                        }    
+
+                        }
+
                     }
+
                 }
+
                 &:hover{
                     ul{
                         @media (min-width: 992px){
                             visibility: visible;
                             opacity: 1;
                         }
+
                         .nav-item{
                             margin-top: 0px;
                         }
+
                     }
+
                 }
+
             }
+
             & + li{
                 margin-left: 30px;
             }
+
         }
+
     }
 }
-
 
 
 .menu_two{
@@ -177,10 +202,12 @@
 				line-height: 60px;
 				color: #fff;
 			}
-		}
-	}
-}
 
+		}
+
+	}
+
+}
 
 //affix menu css
 
@@ -199,10 +226,13 @@
     .navbar{
         background: transparent;
     }
+
     .header-top{
         display: none;
     }
+
     &.header_two{
         background: rgba(34, 34, 34, 0.9)
     }
 }
+

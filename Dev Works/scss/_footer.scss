@@ -3,6 +3,7 @@
     background: #04091e;
     padding: 142px 0px;
 }
+
 .single-footer-widget{
     ul{
         li{
@@ -15,22 +16,30 @@
                 &:hover{
                     color: $yellow;
                 }
+                
             }
+            
         }
+        
     }
+    
     .instafeed{
         margin-left: -5px;
         margin-right: -5px;
         li{
             margin: 5px;
         }
+        
     }
+    
     .subscribe_form{
         padding-top: 13px;
     }
+    
 	.input-group{
 		display: block !important;
 	}
+    
     input{
         width: 100%;
         border: 1px solid #333333;
@@ -44,10 +53,13 @@
         @include placeholder{
             color: #999999;
         }
+        
         &:focus{
             outline: none;
         }
+        
     }
+    
     .sub-btn{
         background: $yellow;
         color: #fff;
@@ -60,7 +72,9 @@
 		right: 0px;
 		top: 0px;
     }
+    
 }
+
 .footer_title{
     font-size: 16px;
     line-height: 24px;
@@ -69,19 +83,23 @@
     text-transform: uppercase;
     margin-bottom: 28px;
 }
+
 .border_line{
     width: 100%;
     height: 1px;
     background: #333333;
     margin-top: 30px;
 }
+
 .footer-bottom{
     padding-top: 46px;
     .footer-text{
         a{
             color: $yellow;
         }
+        
     }
+    
     .footer-social{
         text-align: right;
         a{
@@ -93,6 +111,9 @@
             &:hover{
                 color: $yellow;
             }
+            
         }
+        
     }
+    
 }

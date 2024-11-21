@@ -2,6 +2,7 @@
 .testimonial_area{
     background: #f9f9ff;
 }
+
 .testimonial_slider{
     .testimonial_item{
         border: 1px solid #eeeeee;
@@ -11,6 +12,7 @@
             width: auto;
             margin-right: 30px;
         }
+
         p{
             color: #8c8d9e;
             font-size: 14px;
@@ -18,6 +20,7 @@
             margin-bottom: 0px;
             padding-bottom: 15px;
         }
+
         .sec_h4{
             line-height: 30px;
             transition: all 0.3s linear;
@@ -25,6 +28,7 @@
                 color: $light_blue;
             }
         }
+
         .star{
             a{
                 color: $yellow;
@@ -32,6 +36,7 @@
             }
         }
     }
+
     .owl-dots{
         text-align: center;
         margin-top: 80px;
