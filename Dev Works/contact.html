@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
         <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
         <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive.css">
@@ -36,16 +35,16 @@
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
                             <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
                             <li class="nav-item"><a class="nav-link" href="accomodation.html">Accomodation</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                             <!-- <li class="nav-item submenu dropdown">
                                 <a rel="noopener noreferrer" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                                     <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
                                 </ul>
-                            </li>  -->
-                            <!-- <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
+                            </li> 
+                            <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li> -->
                         </ul>
                     </div> 
                 </nav>
@@ -58,101 +57,74 @@
             <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
             <div class="container">
                 <div class="page-cover text-center">
-                    <h2 class="page-cover-tittle">Gallery</h2>
+                    <h2 class="page-cover-tittle">Contact Us</h2>
                     <ol class="breadcrumb">
                         <li><a rel="noopener noreferrer" href="index.html">Home</a></li>
-                        <li class="active">Gallery</li>
+                        <li class="active">Contact Us</li>
                     </ol>
                 </div>
             </div>
         </section>
         <!--================Breadcrumb Area =================-->
         
-        <!--================Breadcrumb Area =================-->
-        <section class="gallery_area section_gap">
+        <!--================Contact Area =================-->
+        <section class="contact_area section_gap">
             <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_color">Seminar Hall Reservation System Gallery</h2>
-                    <p>Who are in extremely love with eco friendly system.</p>
+                <div id="mapBox" class="mapBox" 
+                    data-lat="40.701083" 
+                    data-lon="-74.1522848" 
+                    data-zoom="13" 
+                    data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+                    data-mlat="40.701083"
+                    data-mlon="-74.1522848">
                 </div>
-                <div class="row imageGallery1" id="gallery">
-                    <div class="col-md-4 gallery_item">
-                        <div class="gallery_img">
-                            <img src="image/gallery/01.jpg" alt="">
-                            <div class="hover">
-                            	<a class="light" href="image/gallery/01.jpg"><i class="fa fa-expand"></i></a>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>California, United States</h6>
+                                <p>Santa monica bullevard</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6><a rel="noopener noreferrer" href="#">00 (440) 9865 562</a></h6>
+                                <p>Mon to Fri 9am to 6 pm</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a rel="noopener noreferrer" href="#">support@Enigma.com</a></h6>
+                                <p>Send us your query anytime!</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 gallery_item">
-                        <div class="gallery_img">
-                            <img src="image/gallery/02.jpg" alt="">
-                            <div class="hover">
-                            	<a class="light" href="image/gallery/02.jpg"><i class="fa fa-expand"></i></a>
+                    <div class="col-md-9">
+                        <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 gallery_item">
-                        <div class="gallery_img">
-                            <img src="image/gallery/03.jpg" alt="">
-                            <div class="hover">
-                            	<a class="light" href="image/gallery/03.jpg"><i class="fa fa-expand"></i></a>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 gallery_item">
-                        <div class="gallery_img">
-                            <img src="image/gallery/04.jpg" alt="">
-                            <div class="hover">
-                            	<a class="light" href="image/gallery/04.jpg"><i class="fa fa-expand"></i></a>
+                            <div class="col-md-12 text-right">
+                                <button type="button" title="button" type="submit" value="submit" class="btn theme_btn button_hover">Send Message</button>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 gallery_item">
-                        <div class="gallery_img">
-                            <img src="image/gallery/06.jpg" alt="">
-                            <div class="hover">
-                            	<a class="light" href="image/gallery/05.jpg"><i class="fa fa-expand"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 gallery_item">
-                        <div class="gallery_img">
-                            <img src="image/gallery/05.jpg" alt="">
-                            <div class="hover">
-                            	<a class="light" href="image/gallery/06.jpg"><i class="fa fa-expand"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 gallery_item">
-                        <div class="gallery_img">
-                            <img src="image/gallery/01-1.jpg" alt="">
-                            <div class="hover">
-                            	<a class="light" href="image/gallery/01-1.jpg"><i class="fa fa-expand"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 gallery_item">
-                        <div class="gallery_img">
-                            <img src="image/gallery/02-1.jpg" alt="">
-                            <div class="hover">
-                            	<a class="light" href="image/gallery/02-1.jpg"><i class="fa fa-expand"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 gallery_item">
-                        <div class="gallery_img">
-                            <img src="image/gallery/03-1.jpg" alt="">
-                            <div class="hover">
-                            	<a class="light" href="image/gallery/03-1.jpg"><i class="fa fa-expand"></i></a>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
-        <!--================Breadcrumb Area =================-->
+        <!--================Contact Area =================-->
         
         <!--================ start footer Area  =================-->	
         <footer class="footer-area section_gap">
@@ -220,8 +192,8 @@
                 </div>
                 <div class="border_line"></div>
                 <div class="row footer-bottom d-flex justify-content-between align-items-center">
-                    <p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Enigma can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a rel="noopener noreferrer" href="" target="_blank">Team Enigma</a>
+                    <p class="col-lg-8 col-sm-12 footer-text m-0"><!-- Link back to Team Enigma can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a rel="noopener noreferrer" href="" target="_blank">Enigma</a>
 <!-- Link back to Enigma can't be removed. Template is licensed under CC BY 3.0. --></p>
                     <div class="col-lg-4 col-sm-12 footer-social">
                         <a rel="noopener noreferrer" href="#"><i class="fa fa-facebook"></i></a>
@@ -233,6 +205,39 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </footer>
 		<!--================ End footer Area  =================-->
+       
+       
+       <!--================Contact Success and Error message Area =================-->
+        <div id="success" class="modal modal-message fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" title="button" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <h2>Thank you</h2>
+                        <p>Your message is successfully sent...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals error -->
+
+        <div id="error" class="modal modal-message fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" title="button" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <h2>Sorry !</h2>
+                        <p> Something went wrong </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================End Contact Success and Error message Area =================-->
         
         
         <!-- Optional JavaScript -->
@@ -250,6 +255,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/isotope/isotope-min.js"></script>
         <script src="js/stellar.js"></script>
         <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <!--gmaps Js-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+        <script src="js/gmaps.min.js"></script>
+        <!-- contact js -->
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/contact.js"></script>
         <script src="js/custom.js"></script>
     </body>
 </html>
