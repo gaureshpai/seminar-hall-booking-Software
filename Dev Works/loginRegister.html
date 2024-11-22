@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="./css/loginRegister.css">
+    <script src="https://kit.fontawesome.com/f16517262f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2 id="title">Login</h2>
+            <form id="authForm">
+                <div class="input">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="name" placeholder="Name" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-field" id="confirmPasswordField" style="display: none;">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                    </div>
+                    
+                    <p id="Password-incorrect" class="pass"></p>
+                    <button type="submit" id="registerBtn">Login</button>
+                    <p id="accountAvailability">Don't have an account? <a href="#" id="Register">Register here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        
+        let regButton = document.getElementById('registerBtn');
+        let registerLink = document.getElementById('Register');
+        let title = document.getElementById('title');
+        let Acc = document.getElementById('accountAvailability');
+        let confirmPasswordField = document.getElementById('confirmPasswordField');
+        let passId = document.getElementById('Password-incorrect');
+
+        
+        registerLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            title.innerHTML = "Register";
+            Acc.innerHTML = `Already have an account? <a href="#" id="Login">Login here</a>`;
+            regButton.innerHTML = "Register";
+            confirmPasswordField.style.display = "flex"; 
+            regButton.removeEventListener("click", loginUser);
+            regButton.addEventListener("click", registerUser);
+
+            let loginLink = document.getElementById("Login");
+            loginLink.addEventListener("click", (e) => {
+                e.preventDefault();
+                switchToLoginMode();
+            });
+        });
+
+        function switchToLoginMode() {
+            title.innerHTML = "Login";
+            Acc.innerHTML = `Don't have an account? <a href="#" id="Register">Register here</a>`;
+            regButton.innerHTML = "Login";
+            confirmPasswordField.style.display = "none"; 
+
+            regButton.removeEventListener("click", registerUser);
+            regButton.addEventListener("click", loginUser);
+
+            let registerLink = document.getElementById("Register");
+            registerLink.addEventListener("click", (e) => {
+                e.preventDefault();
+                title.innerHTML = "Register";
+                Acc.innerHTML = `Already have an account? <a href="#" id="Login">Login here</a>`;
+                regButton.innerHTML = "Register";
+                confirmPasswordField.style.display = "block";
+                regButton.removeEventListener("click", loginUser);
+                regButton.addEventListener("click", registerUser);
+            });
+        }
+
+        function registerUser(e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                passId.innerHTML = "Passwords do not match. Please try again.";
+                return;
+            }
+
+            passId.innerHTML = "";
+            alert("Registered successfully: " + name);
+            window.location.href = "index.html";
+        }
+
+        function loginUser(e) {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            alert("Logged in successfully");
+            window.location.href = "index.html";
+        }
+
+        // Default event for Login button
+        regButton.addEventListener("click", loginUser);
+    </script>
+</body>
+</html>
