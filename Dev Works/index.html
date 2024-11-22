@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Required meta tags -->
+        <!-- Required meta tags --> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="image/favicon.png" type="image/png">
@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/custom.css">
         <link rel="stylesheet" href="css/responsive.css">
     </head>
     <body>
@@ -37,8 +38,8 @@
                             <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
                             <li class="nav-item"><a class="nav-link" href="accomodation.html">Accomodation</a></li>
                             <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                            <li class="nav-item submenu dropdown">
-                                <a rel="noopener noreferrer" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+<!--                             <li class="nav-item submenu dropdown"> -->
+                               <!-- <a rel="noopener noreferrer" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                                     <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
@@ -59,10 +60,11 @@
             	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<h6>Away from monotonous life</h6>
-						<h2>Relax Your Mind</h2>
-						<p>If you are looking at blank cassettes on the web, you may be very confused at the<br> difference in price. You may see some for as low as $.17 each.</p>
-						<a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Get Started</a>
+						<h5>Ideal for Seminars, Workshops, and More</h5>
+						<h2>Book The Seminar Hall whenever needed</h2>
+						<p>Memories and lessons from our seminars last long. The seminar hall is a place for learning and inspiration.</p>
+                        <!--<h5> To Explore Availability</h5><br>-->
+						<a rel="noopener noreferrer" href="/login.html" class="btn theme_btn button_hover">Get Started</a>
 					</div>
 				</div>
             </div>
@@ -70,62 +72,75 @@
                 <div class="container">
                     <div class="hotel_booking_table">
                         <div class="col-md-3">
-                            <h2>Book<br> Your Room</h2>
+                            <h2>Book<br> the <br>
+                               seminar Hall</h2>
                         </div>
                         <div class="col-md-9">
                             <div class="boking_table">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="book_tabel_item">
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <div class='input-group date' id='datetimepicker11'>
-                                                    <input type='text' class="form-control" placeholder="Arrival Date"/>
+                                                    <input type='text' class="form-control" placeholder="Schedule Date"/>
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                                     </span>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="form-group">
                                                 <div class='input-group date' id='datetimepicker1'>
-                                                    <input type='text' class="form-control" placeholder="Departure Date"/>
+                                                    <input type='text' class="form-control" placeholder="Schedule Date"/>
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="input-group">
+                                                <select  title="select"class="wide">
+                                                    <option data-display="Event">Event</option>
+                                                    <option value="1">Academic Events</option>
+                                                    <option value="2">Cultural Events</option>
+                                                    <option value="3">Tech Events</option>
+                                                    <option value="4">Administrative Events</option>
+                                                    <option value="5">Others</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <div class="book_tabel_item">
+                                            <div class="input-group">
+                                                <select  title="select"class="wide">
+                                                    <option data-display="Time">Time</option>
+                                                    <option value="1">Morning</option>
+                                                    <option value="2">Afternoon</option>
+                                                    <!--<option value="3">Potato</option>-->
+                                                </select>
+                                            </div>
+                                            <div class="input-group">
+                                                <input  title="select" class="wide nice-select" placeholder="Faculty Incharge" />
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="book_tabel_item">
                                             <div class="input-group">
                                                 <select  title="select"class="wide">
-                                                    <option data-display="Adult">Adult</option>
-                                                    <option value="1">Old</option>
-                                                    <option value="2">Younger</option>
-                                                    <option value="3">Potato</option>
+                                                    <option data-display="Dept">Department</option>
+                                                
+                                                    <option value="1">CSE</option>
+                                                    <option value="2">ISE</option>
+                                                    <option value="3">AIML</option>
+                                                    <option value="4">ICB</option>
+                                                    <option value="5">AIDS</option>
+                                                    <option value="6">ECE</option>
+                                                    <option value="7">CIVIL</option>
+                                                    <option value="8">MECH</option>
                                                 </select>
                                             </div>
-                                            <div class="input-group">
-                                                <select  title="select"class="wide">
-                                                    <option data-display="Child">Child</option>
-                                                    <option value="1">Child</option>
-                                                    <option value="2">Baby</option>
-                                                    <option value="3">Child</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="book_tabel_item">
-                                            <div class="input-group">
-                                                <select  title="select"class="wide">
-                                                    <option data-display="Child">Number of Rooms</option>
-                                                    <option value="1">Room 01</option>
-                                                    <option value="2">Room 02</option>
-                                                    <option value="3">Room 03</option>
-                                                </select>
-                                            </div>
-                                            <a class="book_now_btn button_hover" href="#">Book Now</a>
+                                            <a class="book_now_btn button_hover" href="/booking.html">Book Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -141,8 +156,8 @@
         <section class="accomodation_area section_gap">
             <div class="container">
                 <div class="section_title text-center">
-                    <h2 class="title_color">Hotel Accomodation</h2>
-                    <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast, </p>
+                    <h2 class="title_color">Seminar Halls</h2>
+                    <p>Host impactful events and inspiring sessions in our fully equipped seminar hall.</p>
                 </div>
                 <div class="row mb_30">
                     <div class="col-lg-3 col-sm-6">
@@ -151,8 +166,8 @@
                                 <img src="image/room1.jpg" alt="">
                                 <a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Double Deluxe Room</h4></a>
-                            <h5>$250<small>/night</small></h5>
+                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Seminar Hall 1</h4></a>
+                            <h4>Capacity : 150<!--150<small>/night</small>--></h5>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -161,8 +176,8 @@
                                 <img src="image/room2.jpg" alt="">
                                 <a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Single Deluxe Room</h4></a>
-                            <h5>$200<small>/night</small></h5>
+                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Seminar Hall 2</h4></a>
+                            <h4>Capacity : 150<!--<small>/night</small>--></h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -171,8 +186,8 @@
                                 <img src="image/room3.jpg" alt="">
                                 <a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Honeymoon Suit</h4></a>
-                            <h5>$750<small>/night</small></h5>
+                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Seminar Hall 3</h4></a>
+                            <h4>Capacity : 300 <!--<small>/night</small>--></h4>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
@@ -181,8 +196,8 @@
                                 <img src="image/room4.jpg" alt="">
                                 <a rel="noopener noreferrer" href="#" class="btn theme_btn button_hover">Book Now</a>
                             </div>
-                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Economy Double</h4></a>
-                            <h5>$200<small>/night</small></h5>
+                            <a rel="noopener noreferrer" href="#"><h4 class="sec_h4">Seminar Hall 4</h4></a>
+                            <h4>Capacity : 300<!--<small>/night</small>--></h4>
                         </div>
                     </div>
                 </div>
@@ -192,48 +207,47 @@
         
         <!--================ Facilities Area  =================-->
         <section class="facilities_area section_gap">
-            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
-            </div>
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
             <div class="container">
                 <div class="section_title text-center">
-                    <h2 class="title_w">Royal Facilities</h2>
-                    <p>Who are in extremely love with eco friendly system.</p>
+                    <h2 class="title_w">Amenities</h2>
+                    <p>Accommodates various events like seminars, workshops, and conferences.</p>
                 </div>
-                <div class="row mb_30">
+                <div class="row mb_20">
                     <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-dinner"></i>Restaurant</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        <div class="facilities_item fixed-card">
+                            <h4 class="sec_h4"><i class="lnr lnr-screen"></i>Modern Technology</h4>
+                            <p>Equipped with advanced audio-visual systems for seamless presentations.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-bicycle"></i>Sports CLub</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        <div class="facilities_item fixed-card">
+                            <h4 class="sec_h4"><i class="lnr lnr-cog"></i>Comfortable Seating</h4>
+                            <p>Ergonomic seating ensures a comfortable experience for participants.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-shirt"></i>Swimming Pool</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        <div class="facilities_item fixed-card">
+                            <h4 class="sec_h4"><i class="lnr lnr-briefcase"></i>Professional Ambiance</h4>
+                            <p>Creates an ideal setting for academic and professional gatherings.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-car"></i>Rent a Car</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        <div class="facilities_item fixed-card">
+                            <h4 class="sec_h4"><i class="lnr lnr-layers"></i>Flexible Layout</h4>
+                            <p>Adaptable seating arrangements to suit different event requirements.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-construction"></i>Gymnesium</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        <div class="facilities_item fixed-card">
+                            <h4 class="sec_h4"><i class="lnr lnr-location"></i>Accessibility</h4>
+                            <p>Convenient location within the campus, with easy access for all attendees.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-coffee-cup"></i>Bar</h4>
-                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        <div class="facilities_item fixed-card">
+                            <h4 class="sec_h4"><i class="lnr lnr-home"></i>Spacious and Versatile</h4>
+                            <p>Accommodates various events like seminars, workshops, and conferences.</p>
                         </div>
                     </div>
                 </div>
@@ -247,9 +261,25 @@
                 <div class="row">
                     <div class="col-md-6 d_flex align-items-center">
                         <div class="about_content ">
-                            <h2 class="title title_color">About Us <br>Our History<br>Mission & Vision</h2>
-                            <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
-                            <a rel="noopener noreferrer" href="#" class="button_hover theme_btn_two">Request Custom Price</a>
+                            <h2 class="title title_color">About Us <br>Mission & Vision</h2>
+                            <p>To revolutionize the seminar hall booking process at AJIET by creating a seamless, efficient, and fully digital platform, eliminating paperwork while fostering transparency, convenience, and accessibility for all users.
+
+                                Mission:
+                                Digitize the entire seminar hall booking process to ensure ease of access and streamlined operations.
+                                Enhance Efficiency by reducing manual errors, saving time, and cutting down on redundant paperwork.
+                                Promote Transparency by providing real-time availability, automated approval workflows, and clear records.
+                                Empower Users with a user-friendly platform that caters to diverse needs, from students to faculty and administration.
+                                Sustainability by minimizing the use of paper, contributing to AJIET’s commitment to eco-friendly practices.
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+
+                            </p>
+                            <!-- <a rel="noopener noreferrer" href="#" class="button_hover theme_btn_two">Request Custom Price</a> -->
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -260,8 +290,9 @@
         </section>
         <!--================ About History Area  =================-->
         
-        <!--================ Testimonial Area  =================-->
-        <section class="testimonial_area section_gap">
+      
+          <!--================ Testimonial Area  =================-->
+        <!--<section class="testimonial_area section_gap">
             <div class="container">
                 <div class="section_title text-center">
                     <h2 class="title_color">Testimonial from our Clients</h2>
@@ -326,11 +357,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!--================ Testimonial Area  =================-->
         
         <!--================ Latest Blog Area  =================-->
-        <section class="latest_blog_area section_gap">
+       <!-- <section class="latest_blog_area section_gap">
             <div class="container">
                 <div class="section_title text-center">
                     <h2 class="title_color">latest posts from blog</h2>
@@ -387,7 +418,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!--================ Recent Area  =================-->
         
         <!--================ start footer Area  =================-->	
@@ -416,7 +447,8 @@
                                     <ul class="list_style">
                                         <li><a rel="noopener noreferrer" href="#">Team</a></li>
                                         <li><a rel="noopener noreferrer" href="#">Pricing</a></li>
-                                        <li><a rel="noopener noreferrer" href="#">Blog</a></li>
+                                        <!-- <li>
+                                            <a rel="noopener noreferrer" href="#">Blog</a></li> -->
                                         <li><a rel="noopener noreferrer" href="#">Contact</a></li>
                                     </ul>
                                 </div>										
