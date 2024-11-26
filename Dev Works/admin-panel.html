@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Panel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -32,6 +33,37 @@
       background-color: #34495e;
       padding: 10px;
     }
+    .profile {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #17202a;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .profile img {
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .profile p {
+      margin: 5px 0;
+      color: white;
+      text-align: center;
+    }
+    .sidebar .toggle-profile {
+      cursor: pointer;
+      color: #bdc3c7;
+      margin-bottom: 20px;
+    }
+    .sidebar .toggle-profile i {
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .sidebar .toggle-profile:hover {
+      background-color: #34495e;
+      padding: 10px;
+    }
     /* Responsive Sidebar */
     @media (max-width: 768px) {
       .sidebar {
@@ -56,19 +88,6 @@
       padding: 10px 20px;
       background-color: #ecf0f1;
       border-bottom: 1px solid #bdc3c7;
-    }
-    .header .search-bar input {
-      padding: 8px 12px;
-      border: 1px solid #bdc3c7;
-      border-radius: 4px 0 0 4px;
-    }
-    .header .search-bar button {
-      padding: 8px 12px;
-      background-color: #34495e;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 0 4px 4px 0;
     }
     /* Content Section */
     .content {
@@ -123,6 +142,16 @@
 </head>
 <body>
   <div class="sidebar" id="sidebar">
+    <!-- Admin Profile Popup -->
+    <div class="profile" id="profile">
+      <h2>Admin Profile</h2>
+      <img src="https://via.placeholder.com/80" alt="Admin Profile Picture">
+      <p><strong>Name:</strong> Admin</p>
+      <p><strong>Email:</strong> admin@example.com</p>
+      <p><strong>Role:</strong> Administrator</p>
+      <button onclick="toggleProfile()">Close</button>
+    </div>
+    <a class="toggle-profile" onclick="toggleProfile()"><i class="fas fa-user-circle fa-2x"></i> Admin Profile</a>
     <div class="menu">
       <a href="#" aria-label="Navigate to Dashboard">Dashboard</a>
       <a href="#" aria-label="View Requests">Requests</a>
@@ -132,26 +161,11 @@
   </div>
   <div class="main-content">
     <div class="header">
-      <button onclick="toggleSidebar()">☰</button>
+      <!-- <button onclick="toggleSidebar()">☰</button> -->
       <h2>Admin Panel</h2>
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." aria-label="Search">
-        <button>Search</button>
-      </div>
     </div>
     <div id="card-container" class="content">
       <!-- Cards will be dynamically added here -->
-    </div>
-  </div>
-  <!-- Modal -->
-  <div id="profile-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="document.getElementById('profile-modal').style.display='none'">&times;</span>
-      <h2>Admin Profile</h2>
-      <img src="https://via.placeholder.com/80" alt="Admin Profile Picture">
-      <p><strong>Name:</strong> Admin</p>
-      <p><strong>Email:</strong> admin@example.com</p>
-      <p><strong>Role:</strong> Administrator</p>
     </div>
   </div>
   <script>
@@ -161,6 +175,20 @@
       sidebar.classList.toggle('open');
     }
 
+    // Sidebar profile toggle function
+    function toggleProfile() {
+      const profile = document.getElementById('profile');
+      const profileLink = document.querySelector('.toggle-profile');
+
+      if (profile.style.display === 'flex') {
+        profile.style.display = 'none';
+        profileLink.style.display = 'flex';
+      } else {
+        profile.style.display = 'flex';
+        profileLink.style.display = 'none';
+      }
+    }
+    
     // Dynamic card data
     const cardData = [
       { title: "Requests for Booking Seminar Hall", description: "Manage and view booking requests here." },
