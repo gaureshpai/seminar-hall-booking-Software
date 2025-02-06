@@ -3564,6 +3564,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 28px;
+  text-align: center;
 }
 
 .border_line {
