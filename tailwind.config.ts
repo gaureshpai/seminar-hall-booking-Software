@@ -9,6 +9,11 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			geistSans: ['var(--font-geist-sans)', 'sans-serif'],
+			geistMono: ['var(--font-geist-mono)', 'monospace'],
+			poppins: ['var(--font-poppins)', 'sans-serif'],
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
