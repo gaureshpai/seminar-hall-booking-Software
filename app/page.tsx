@@ -16,7 +16,6 @@ export default function Home() {
         <div className="flex items-center justify-center min-h-screen mx-auto">
           <div className="container mx-auto text-center z-20">
             <GetStarted/>
-
             <BooktheHall/>
           </div>
         </div>

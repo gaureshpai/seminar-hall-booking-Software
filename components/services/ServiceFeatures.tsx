@@ -30,19 +30,21 @@ export default function ServiceFeatures() {
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
           Why Choose Our Service?
         </h2>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-2xl shadow-md flex flex-col items-center text-center"
-            >
-              {feature.icon}
-              <h3 className="mt-4 text-lg font-semibold text-gray-700">
-                {feature.title}
-              </h3>
-              <p className="text-gray-500 text-sm mt-2">{feature.description}</p>
-            </div>
-          ))}
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2  gap-6">
+          
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-2xl shadow-lg flex flex-col hover:scale-105 hover:shadow-xl items-center hover:pl-[0.5rem] hover:pt-[0.5rem] transition-all duration-200 text-center"
+              >
+                {feature.icon}
+                <h3 className="mt-4 text-lg font-semibold text-gray-700">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-500 text-sm mt-2">{feature.description}</p>
+              </div>
+            ))}
+
         </div>
       </div>
     </div>
