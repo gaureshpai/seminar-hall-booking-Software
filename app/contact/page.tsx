@@ -30,7 +30,7 @@ const ContactForm = () => {
   return (
     <div className="w-full">
       <section
-        className="relative h-[50vh] bg-cover bg-center"
+        className="relative h-[50vh] bg-cover bg-center justify-items-center"
         style={{ backgroundImage: "url('/images/facilities.jpg')" }}
       >
         <div className="container relative z-10 flex h-full flex-col items-center justify-center">
