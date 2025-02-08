@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/book" className="hover:text-yellow-400 transition-colors">
+                                <Link href="/about" className="hover:text-yellow-400 transition-colors">
                                     About
                                 </Link>
                             </li>
