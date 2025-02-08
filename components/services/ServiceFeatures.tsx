@@ -35,7 +35,7 @@ export default function ServiceFeatures() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-2xl shadow-lg flex flex-col hover:scale-105 hover:shadow-xl items-center hover:pl-[0.5rem] hover:pt-[0.5rem] transition-all duration-200 text-center"
+                className="bg-white p-6 rounded-2xl shadow-lg flex flex-col hover:scale-110 hover:shadow-2xl items-center  transition-all duration-200 text-center"
               >
                 {feature.icon}
                 <h3 className="mt-4 text-lg font-semibold text-gray-700">
