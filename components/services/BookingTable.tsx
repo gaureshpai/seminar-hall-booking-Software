@@ -76,7 +76,7 @@ const BookingTable = () => {
                               </select>
                               <Link
                                   href="/booking"
-                                  className="mt-4 inline-block w-full bg-yellow-500 text-white py-2 px-4 hover:bg-yellow-600 transition duration-300 text-center"
+                                  className="mt-4 inline-block w-full  min-w-[60px] bg-yellow-500 text-white py-2 px-4 hover:bg-yellow-600 transition duration-300 text-center"
                                   aria-label="Book Now"
                               >
                                   Book Now
