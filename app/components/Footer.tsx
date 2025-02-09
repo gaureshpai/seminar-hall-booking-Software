@@ -16,20 +16,25 @@ const Footer: React.FC = () => {
                     </div>
                     <div>
                         <h6 className="text-white text-lg font-semibold mb-4">Navigation Links</h6>
-                        <ul className="space-y-2">
+                        <ul className="space-y-1  ">
                             <li>
                                 <Link href="/" className="hover:text-yellow-400 transition-colors">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/book" className="hover:text-yellow-400 transition-colors">
+                                <Link href="/about" className="hover:text-yellow-400 transition-colors">
                                     About
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/services" className="hover:text-yellow-400 transition-colors">
                                     Services
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/gallery" className="hover:text-yellow-400 transition-colors">
+                                    Gallery
                                 </Link>
                             </li>
                             <li>

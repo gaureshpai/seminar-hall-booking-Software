@@ -41,8 +41,8 @@ const Navbar = () => {
                         <Image
                             src="/images/logo.png"
                             alt="Logo"
-                            width={100}
-                            height={100}
+                            width={60}
+                            height={50}
                             className="p-2 h-[100%] relative left-1"
                         />
                     </Link>
