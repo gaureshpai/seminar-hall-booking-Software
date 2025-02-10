@@ -6,7 +6,7 @@ const AdminPanel = () => {
   return (
     <div className="h-screen flex flex-col">
    
-      <div className="h-16"></div> 
+      <div className="h-16"></div>
 
       <div className="flex flex-grow">
       
