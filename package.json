@@ -11,7 +11,7 @@
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.9.4",
     "@radix-ui/react-slot": "^1.1.2",
-    "@types/node": "^22.13.1",
+    "@types/node": "^22.13.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",
