@@ -8,195 +8,127 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Poppins", sans-serif;
       display: flex;
       height: 100vh;
+      background-color: #f4f6f9;
     }
-    /* Sidebar */
     .sidebar {
-      width: 250px;
-      background-color: #04091e;
+      width: 260px;
+      background-color: #1f2937;
       color: white;
       display: flex;
       flex-direction: column;
       padding: 20px;
       transition: width 0.3s;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     }
     .sidebar .menu a {
       text-decoration: none;
       color: white;
-      margin: 10px 0;
-      display: block;
-      font-size: 18px;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease-in-out;
+    }
+    .sidebar .menu a i {
+      margin-right: 10px;
     }
     .sidebar .menu a:hover {
-      background-color: #34495e;
-      padding: 10px;
+      background-color: #374151;
     }
     .profile {
-      display: none;
+      display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: 20px;
-      background-color: #17202a;
       padding: 10px;
-      border-radius: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
     }
     .profile img {
       border-radius: 50%;
       margin-bottom: 10px;
+      width: 70px;
+      height: 70px;
+      border: 3px solid white;
     }
-    .profile p {
-      margin: 5px 0;
-      color: white;
+    .profile-details {
+      display: none;
       text-align: center;
     }
-    .sidebar .toggle-profile {
-      cursor: pointer;
-      color: #bdc3c7;
-      margin-bottom: 20px;
-    }
-    .sidebar .toggle-profile i {
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-    .sidebar .toggle-profile:hover {
-      background-color: #34495e;
-      padding: 10px;
-    }
-    /* Responsive Sidebar */
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 0;
-        overflow: hidden;
-      }
-      .sidebar.open {
-        width: 250px;
-      }
-    }
-    /* Main Content */
     .main-content {
       flex-grow: 1;
       display: flex;
       flex-direction: column;
     }
-    /* Header */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      background-color: #ecf0f1;
-      border-bottom: 1px solid #bdc3c7;
+      padding: 15px 20px;
+      background-color: white;
+      border-bottom: 2px solid #ddd;
+      font-weight: bold;
     }
-    /* Content Section */
     .content {
       display: flex;
       gap: 20px;
       flex-grow: 1;
       padding: 20px;
-      background-color: #f8f9fa;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
     }
     .content .card {
-      flex: 1;
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .content .card h3 {
-      margin-bottom: 10px;
-    }
-    .content .card p {
-      color: #666;
-    }
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background-color: white;
+      background: white;
       padding: 20px;
       border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      flex: 1 1 300px;
+      max-width: 350px;
       text-align: center;
-      max-width: 400px;
-      width: 90%;
+      transition: transform 0.3s ease-in-out;
     }
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 24px;
-      cursor: pointer;
+    .content .card:hover {
+      transform: translateY(-5px);
     }
   </style>
 </head>
 <body>
-  <div class="sidebar" id="sidebar">
-    <!-- Admin Profile Popup -->
-    <div class="profile" id="profile">
-      <h2>Admin Profile</h2>
-      <img src="https://via.placeholder.com/80" alt="Admin Profile Picture">
-      <p><strong>Name:</strong> Admin</p>
-      <p><strong>Email:</strong> admin@example.com</p>
-      <p><strong>Role:</strong> Administrator</p>
-      <button onclick="toggleProfile()">Close</button>
+  <div class="sidebar">
+    <div class="profile" onclick="toggleProfile()">
+      <img src="https://via.placeholder.com/80" alt="Admin Profile">
+      <div class="profile-details">
+        <p><strong>Admin</strong></p>
+        <p>admin@example.com</p>
+      </div>
     </div>
-    <a class="toggle-profile" onclick="toggleProfile()"><i class="fas fa-user-circle fa-2x"></i> Admin Profile</a>
     <div class="menu">
-      <a href="#" aria-label="Navigate to Dashboard">Dashboard</a>
-      <a href="#" aria-label="View Requests">Requests</a>
-      <a href="#" aria-label="Check Booking History">Booking History</a>
-      <a href="#" aria-label="Open Settings">Settings</a>
+      <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="#"><i class="fas fa-file-alt"></i> Requests</a>
+      <a href="#"><i class="fas fa-history"></i> Booking History</a>
+      <a href="#"><i class="fas fa-cog"></i> Settings</a>
     </div>
   </div>
   <div class="main-content">
     <div class="header">
-      <!-- <button onclick="toggleSidebar()">☰</button> -->
       <h2>Admin Panel</h2>
     </div>
-    <div id="card-container" class="content">
-      <!-- Cards will be dynamically added here -->
-    </div>
+    <div class="content" id="card-container"></div>
   </div>
   <script>
-    // Sidebar toggle function
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('open');
-    }
-
-    // Sidebar profile toggle function
     function toggleProfile() {
-      const profile = document.getElementById('profile');
-      const profileLink = document.querySelector('.toggle-profile');
-
-      if (profile.style.display === 'flex') {
-        profile.style.display = 'none';
-        profileLink.style.display = 'flex';
-      } else {
-        profile.style.display = 'flex';
-        profileLink.style.display = 'none';
-      }
+      const profileDetails = document.querySelector(".profile-details");
+      profileDetails.style.display = profileDetails.style.display === "none" || profileDetails.style.display === "" ? "block" : "none";
     }
-    
-    // Dynamic card data
-    const cardData = [
-      { title: "Requests for Booking Seminar Hall", description: "Manage and view booking requests here." },
-      { title: "Booking History", description: "Review the history of seminar hall bookings." },
-      { title: "Placeholder", description: "This section is reserved for future use." }
-    ];
 
-    // Inject cards into the content
+    const cardData = [
+      { title: "Booking Requests", description: "Manage and view seminar hall booking requests." },
+      { title: "Booking History", description: "Review past seminar hall bookings." },
+      { title: "Upcoming Features", description: "New functionalities coming soon." }
+    ];
     const container = document.getElementById('card-container');
     cardData.forEach(card => {
       const cardElement = document.createElement('div');

@@ -47,11 +47,13 @@ const Footer: React.FC = () => {
                     <div>
                         <h6 className="text-white text-lg font-semibold mb-4">Admin Panel</h6>
                         <p className="text-sm mb-4">Admins can manage bookings and system settings through the panel.</p>
+                        <Link href = "/login">
                         <button
                             className="bg-yellow-400 text-gray-900 px-4 py-2 rounded hover:bg-yellow-500 transition-colors"
                         >
                             Admin Login
-                        </button>
+                        </button></Link>
+                        
                     </div>
                 </div>
                 <div className="border-t border-gray-800 my-8"></div>
