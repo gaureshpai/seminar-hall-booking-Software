@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { signOut, useSession } from 'next-auth/react'
 
 const Navbar = () => {
+    const { data: session } = useSession();
+    const isSignedIn = !!session;
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -57,6 +60,9 @@ const Navbar = () => {
                                 {item.name}
                             </Link>
                         ))}
+                        <Link href={'/sign-in'} className='flex items-center gap-2'>
+                            <span className='md:flex hidden text-gray-700 text-sm hover:text-blue-500 focus:outline-none' onClick={() => signOut()}>SIGN OUT</span>
+                        </Link>
                     </nav>
 
                     <button
@@ -65,11 +71,14 @@ const Navbar = () => {
                     >
                         {isMenuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
                     </button>
+
                 </div>
+               
+
 
                 {isMenuOpen && (
                     <div className="md:hidden flex flex-col items-center bg-white py-4 space-y-3 shadow-md">
-                        {navItems.map((item, index) => (
+                {navItems.map((item, index) => (
                             <Link
                                 key={index}
                                 href={item.href}
@@ -79,8 +88,13 @@ const Navbar = () => {
                                 {item.name}
                             </Link>
                         ))}
+                        <Link href={'/sign-in'} className='flex items-center gap-2'>
+                            <span className='text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md transition-colors duration-200' onClick={() => signOut()}>Sign Out</span>
+                        </Link>
+
                     </div>
                 )}
+                
             </div>
         </header>
     );

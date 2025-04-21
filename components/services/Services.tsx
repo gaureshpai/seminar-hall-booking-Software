@@ -2,7 +2,7 @@ import React from 'react'
 
 function Services() {
   return (
-    <section className="section_gap py-20 justify-items-center">
+    <section className="section_gap py-20 flex justify-center justify-items-center">
         <div className="container justify-items-center">
             <div className="section_title text-center mb-8 ">
                 <h2 className="title_color text-gray-800 text-5xl font-poppins">Services</h2>

@@ -7,13 +7,11 @@ import ServiceFeatures from '@/components/services/ServiceFeatures'
 const page = () => {
   return (
     <div>
-       
         <Breadcrumb />
           <Services />
           <ServiceFeatures/>
           <BookingTable />
-          
-          
+
     </div>
   )
 }
