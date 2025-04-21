@@ -15,7 +15,7 @@ const GetStarted = () => {
               hall is a place for learning and inspiration.
           </p>
           <Link
-              href="/login"
+              href="/sign-up"
               className="mt-8 bg-yellow-500 text-white py-3 px-10 hover:bg-yellow-600 transition duration-300 font-bold w-fit"
               aria-label="Get Started"
           >
