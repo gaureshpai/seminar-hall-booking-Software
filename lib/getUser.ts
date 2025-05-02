@@ -4,7 +4,6 @@ import { revalidatePath } from "next/cache";
 
 export const getUser = async() => {
     dbConnect();
-
     const session = await getServerSession();
     const userId = session?.user?.id;
     if(!userId){
