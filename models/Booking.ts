@@ -10,6 +10,7 @@ export interface IBooking extends Document{
     FacultyIncharge: String;
     Hall: String;
     email: String;
+    status: String;
     createdAt: String;
     updatedAt: String;
 }
@@ -48,7 +49,12 @@ const BookingSchema: Schema<IBooking> = new mongoose.Schema({
     email: {
         type: String,
         required: true
-    }
+    },
+    status: {
+        type: String,
+        enum: ['pending','approved', 'rejected'],
+        default: 'pending'
+    },
 }, {timestamps: true})
 
 const BookingModel = mongoose.models.Booking || mongoose.model("Booking", BookingSchema);
