@@ -1,6 +1,7 @@
 "use server";
 import BookingModel from "@/models/Booking";
 import dbConnect from "@/lib/dbConnect";
+import UserModel, { User } from "@/models/User";
 
 export interface Booking {
   id: string;
@@ -87,4 +88,37 @@ export async function updateBookingStatus(bookingId: string, status: string) {
   if (updatedBooking.userId) result.userId = updatedBooking.userId.toString();
   
   return result;
+}
+
+export async function getUsers(){
+  dbConnect();
+
+  const users = await UserModel.find().lean();
+
+  const cleanedUsers = users.map((user: any) => ({
+    _id: user._id.toString(),
+    username: user.username || "",
+    email: user.email || "",
+    isAdmin: user.isAdmin || "regular", 
+
+  }));
+
+  return cleanedUsers;
+
+}
+
+export async function changeRole(userId: string, roleChange: string){
+  dbConnect();
+
+  const user = await UserModel.findByIdAndUpdate(
+    userId,
+    { isAdmin: roleChange },
+    { new: true }
+  ).lean() as unknown as User;
+
+  console.log(user);
+  
+  if(!user) throw new Error("User Not Found");
+
+  return user;
 }
