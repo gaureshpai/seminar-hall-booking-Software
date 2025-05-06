@@ -37,7 +37,6 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
   const handleStatusChange = async (bookingId: string, newStatus: string) => {
     try {
       await updateBookingStatus(bookingId, newStatus);
-      // Update local state to reflect the change without a page refresh
       setLocalBookings(prev => 
         prev.map(booking => 
           booking.id === bookingId 

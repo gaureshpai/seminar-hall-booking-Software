@@ -19,6 +19,14 @@ export interface Booking {
   status: string; 
 }
 
+export interface SanitizedUser {
+  _id: string;
+  username: string;
+  email: string;
+  isAdmin: string;
+}
+
+
 export async function getBookings(): Promise<Booking[]> {
   await dbConnect();
   const bookings = await BookingModel.find().lean();
@@ -90,8 +98,8 @@ export async function updateBookingStatus(bookingId: string, status: string) {
   return result;
 }
 
-export async function getUsers(){
-  dbConnect();
+export async function getUsers(): Promise<SanitizedUser[]>{
+  await dbConnect();
 
   const users = await UserModel.find().lean();
 
@@ -108,7 +116,7 @@ export async function getUsers(){
 }
 
 export async function changeRole(userId: string, roleChange: string){
-  dbConnect();
+  await dbConnect();
 
   const user = await UserModel.findByIdAndUpdate(
     userId,
@@ -118,7 +126,15 @@ export async function changeRole(userId: string, roleChange: string){
 
   console.log(user);
   
-  if(!user) throw new Error("User Not Found");
+  if(!user._id) throw new Error("User Not Found");
 
-  return user;
+
+  const sanitizedUser: SanitizedUser = {
+    _id: user._id.toString(),
+    username: user.username || "",
+    email: user.email || "",
+    isAdmin: user.isAdmin || "regular",
+  };
+
+  return sanitizedUser;
 }
