@@ -36,7 +36,8 @@ export const authOptions: NextAuthOptions = {
                     return{
                         id: user._id.toString(),
                         email: user.email,
-                        username: user.username
+                        username: user.username,
+                        isAdmin: user.isAdmin
                     };
                 } catch (error: any) {
                     throw new Error(error.message)
@@ -49,6 +50,7 @@ export const authOptions: NextAuthOptions = {
             if(user) {
                 token.sub = user.id?.toString();
                 token.username = user.username;
+                token.isAdmin = user.isAdmin;
             }
             return token
         },
@@ -57,6 +59,7 @@ export const authOptions: NextAuthOptions = {
                 session.user = session.user || {};
                 session.user.id = token.sub;
                 session.user.username = token.username
+                session.user.isAdmin = token.isAdmin;
             }
             return session;
         }
