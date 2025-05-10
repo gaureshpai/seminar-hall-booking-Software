@@ -1,10 +1,9 @@
-"use client";
+"use server";
+import { getBookings } from '@/actions/adminActions';
+import DataOverview from './_components/DataOverview';
 
+export default async function Page() {
+  const bookings = await getBookings(); 
 
-const AdminPanel = () => {
-  return (
-    <div>Lala</div>
-  );
-};
-
-export default AdminPanel;
+  return <DataOverview bookings={bookings} />; 
+}

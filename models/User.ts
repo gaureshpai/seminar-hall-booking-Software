@@ -5,6 +5,7 @@ export interface User extends Document{
     username: string;
     email: string;
     password: string;
+    isAdmin: string;
 }
 
 const UserSchema: Schema<User> = new mongoose.Schema({
@@ -21,6 +22,11 @@ const UserSchema: Schema<User> = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    isAdmin: {
+        type: String,
+        default: "regular",
+        enum: ["admin", "regular"]
     }
 })
 

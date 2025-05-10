@@ -5,7 +5,6 @@ import { getToken } from "next-auth/jwt";
 export async function middleware(request: NextRequest) {
   const token = await getToken({ req: request });
   const url = request.nextUrl;
-
   if (url.pathname === "/") {
       if (!token) {
           return NextResponse.redirect(new URL("/sign-up", request.url));
@@ -22,6 +21,13 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL("/", request.url))
     }
   }
+    if (url.pathname.startsWith("/admin")) {
+    if (token?.isAdmin !== "admin") {
+      return NextResponse.redirect(new URL("/", request.url));
+    }
+  }
+
+
   
   return NextResponse.next();
 }

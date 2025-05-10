@@ -1,6 +1,7 @@
 "use server";
 import BookingModel from "@/models/Booking";
 import dbConnect from "@/lib/dbConnect";
+import UserModel, { User } from "@/models/User";
 
 export interface Booking {
   id: string;
@@ -17,6 +18,14 @@ export interface Booking {
   userId: string;
   status: string; 
 }
+
+export interface SanitizedUser {
+  _id: string;
+  username: string;
+  email: string;
+  isAdmin: string;
+}
+
 
 export async function getBookings(): Promise<Booking[]> {
   await dbConnect();
@@ -87,4 +96,45 @@ export async function updateBookingStatus(bookingId: string, status: string) {
   if (updatedBooking.userId) result.userId = updatedBooking.userId.toString();
   
   return result;
+}
+
+export async function getUsers(): Promise<SanitizedUser[]>{
+  await dbConnect();
+
+  const users = await UserModel.find().lean();
+
+  const cleanedUsers = users.map((user: any) => ({
+    _id: user._id.toString(),
+    username: user.username || "",
+    email: user.email || "",
+    isAdmin: user.isAdmin || "regular", 
+
+  }));
+
+  return cleanedUsers;
+
+}
+
+export async function changeRole(userId: string, roleChange: string){
+  await dbConnect();
+
+  const user = await UserModel.findByIdAndUpdate(
+    userId,
+    { isAdmin: roleChange },
+    { new: true }
+  ).lean() as unknown as User;
+
+  console.log(user);
+  
+  if(!user._id) throw new Error("User Not Found");
+
+
+  const sanitizedUser: SanitizedUser = {
+    _id: user._id.toString(),
+    username: user.username || "",
+    email: user.email || "",
+    isAdmin: user.isAdmin || "regular",
+  };
+
+  return sanitizedUser;
 }

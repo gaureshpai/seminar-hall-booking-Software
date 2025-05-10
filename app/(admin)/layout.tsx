@@ -20,9 +20,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/admin/dashboard"
+                  href="/admin"
                   className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${
-                    pathname === "/admin/dashboard" ? "bg-indigo-700" : ""
+                    pathname === "/admin" ? "bg-indigo-700" : ""
                   }`}
                 >
                   <PieChart className="mr-3 h-5 w-5" />
