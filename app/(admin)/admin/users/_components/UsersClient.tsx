@@ -78,13 +78,10 @@ export default function UsersClient({ users }: { users: SanitizedUser[] }) {
           >
             <option value="all">All Roles</option>
             <option value="admin">Admin</option>
-            <option value="faculty">Faculty</option>
-            <option value="staff">Staff</option>
+            <option value="regular">Regular</option>
           </select>
           
-          <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
-            Add New User
-          </button>
+          
         </div>
       </div>
       
