@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@hookform/resolvers": "^5.0.1",
     "@netlify/plugin-nextjs": "^5.10.7",
-    "@radix-ui/react-label": "^2.1.4",
+    "@radix-ui/react-label": "^2.1.6",
     "@radix-ui/react-slot": "^1.2.0",
     "@types/node": "^22.15.19",
     "axios": "^1.9.0",
