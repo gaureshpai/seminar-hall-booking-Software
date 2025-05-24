@@ -1,11 +1,10 @@
 import React from "react"
-import Link from "next/link";
-import GetStarted from "./components/Home/GetStarted";
-import BooktheHall from "./components/Home/BooktheHall";
-import Halls from "./components/Home/Halls";
-import Facilities from "./components/Home/Facilities";
-import AboutSection from "./components/Home/AboutSection";
-import Navbar from "./components/Navbar";
+import GetStarted from "@/components/Home/GetStarted";
+import BooktheHall from "@/components/Home/BooktheHall";
+import Halls from "@/components/Home/Halls";
+import Facilities from "@/components/Home/Facilities";
+import AboutSection from "@/components/Home/AboutSection";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (

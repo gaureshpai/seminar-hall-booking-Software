@@ -1,7 +1,7 @@
 "use server";
-import { getBookings } from '@/actions/adminActions';
-import BookingsClient from './_components/BookingsClient';
 
+import { getBookings } from '@/actions/adminActions';
+import BookingsClient from '../../../../components/BookingsClient';
 
 export default async function Page() {
   const bookings = await getBookings(); 

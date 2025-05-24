@@ -30,7 +30,7 @@ const BooktheHall = () => {
             toast.success("Booking successful!");
             try {
                 const emailRes = await sendMail(
-                    data.email, 
+                    data.email,
                     "Booking Confirmation",
                     `<p>Hello ${data.FacultyIncharge},<br />Your booking for <strong>${data.Event}</strong> in <strong>${data.Hall}</strong> on <strong>${data.Date}</strong> at <strong>${data.Time}</strong> has been received.</p>`
                 );
@@ -89,7 +89,7 @@ const BooktheHall = () => {
                                         <option value="Others">Others</option>
                                     </select>
                                 </div>
-                                
+
                             </div>
 
                             <div className="w-full md:w-1/3 px-2 mb-6 md:mb-0">
@@ -116,7 +116,7 @@ const BooktheHall = () => {
                                 <div className='mt-4'>
                                     <input
                                         type="text"
-                                        {...register("email", {required: true})}
+                                        {...register("email", { required: true })}
                                         className="w-full py-2 px-3 border border-[#2b3146] bg-[#04091e] text-gray-400 placeholder-gray-400 focus:outline-none focus:border-yellow-500"
                                         placeholder="Email"
                                         aria-label="email"
@@ -162,7 +162,7 @@ const BooktheHall = () => {
                                 >
                                     {loading ? "Booking..." : "Book Now"}
                                 </button>
-                                
+
                             </div>
                         </div>
                     </div>

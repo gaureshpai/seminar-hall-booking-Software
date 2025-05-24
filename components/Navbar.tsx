@@ -73,12 +73,12 @@ const Navbar = () => {
                     </button>
 
                 </div>
-               
+
 
 
                 {isMenuOpen && (
                     <div className="md:hidden flex flex-col items-center bg-white py-4 space-y-3 shadow-md">
-                {navItems.map((item, index) => (
+                        {navItems.map((item, index) => (
                             <Link
                                 key={index}
                                 href={item.href}
@@ -94,7 +94,7 @@ const Navbar = () => {
 
                     </div>
                 )}
-                
+
             </div>
         </header>
     );

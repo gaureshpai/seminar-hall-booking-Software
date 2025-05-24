@@ -1,4 +1,3 @@
-// app/(auth)/sign-up/page.tsx
 "use client";
 
 import { signUpSchema } from "@/schemas/signUpSchema";
@@ -40,7 +39,6 @@ export default function SignUp() {
 
   return (
     <div className="flex font-poppins min-h-screen">
-      {/* Left Section */}
       <div className="w-full md:w-1/2 bg-white p-10 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full">
           <div className="flex flex-row gap-3">
@@ -61,7 +59,6 @@ export default function SignUp() {
               </p>
             </div>
           </div>
-
 
           <div className="relative text-center text-sm text-gray-400 mb-6">
             <span className="bg-white px-2 z-10 relative">Sign-Up an account</span>
@@ -111,7 +108,6 @@ export default function SignUp() {
         </div>
       </div>
 
-      {/* Right Section */}
       <div className="hidden md:flex w-1/2 bg-[url('/images/loginPic4.avif')]  bg-cover bg-center items-center justify-center relative">
 
         <div className="absolute bottom-10 left-10 text-gray-950  max-w-xs">

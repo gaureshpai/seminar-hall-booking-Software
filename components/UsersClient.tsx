@@ -1,6 +1,6 @@
 "use client";
+
 import { changeRole, SanitizedUser } from '@/actions/adminActions';
-import { User } from '@/models/User';
 import { Search, UserCheck, UserX } from 'lucide-react';
 import React, { useState } from 'react';
 
@@ -11,7 +11,7 @@ export default function UsersClient({ users }: { users: SanitizedUser[] }) {
   const [userList, setUserList] = useState<SanitizedUser[]>(users);
 
   const getRoleBadgeClass = (role: string) => {
-    switch(role.toLowerCase()) {
+    switch (role.toLowerCase()) {
       case 'admin':
         return 'bg-purple-100 text-purple-800';
       case 'regular':
@@ -23,11 +23,11 @@ export default function UsersClient({ users }: { users: SanitizedUser[] }) {
 
   const handleRoleChange = async (userId: string, newRole: string) => {
     try {
-    await changeRole(userId, newRole);
-      setUserList(prev => 
-        prev.map(userList => 
-          userList._id === userId 
-            ? { ...userList, isAdmin: newRole } 
+      await changeRole(userId, newRole);
+      setUserList(prev =>
+        prev.map(userList =>
+          userList._id === userId
+            ? { ...userList, isAdmin: newRole }
             : userList
         )
       );
@@ -38,15 +38,15 @@ export default function UsersClient({ users }: { users: SanitizedUser[] }) {
   };
 
   const filteredUsers = userList.filter(userList => {
-    const matchesSearch = 
-      userList.username.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    const matchesSearch =
+      userList.username.toLowerCase().includes(searchQuery.toLowerCase()) ||
       userList.email.toLowerCase().includes(searchQuery.toLowerCase())
-    
-    const matchesRole = 
-      roleFilter === 'all' || 
+
+    const matchesRole =
+      roleFilter === 'all' ||
       userList.isAdmin.toLowerCase() === roleFilter.toLowerCase();
-    
-    return matchesSearch  && matchesRole;
+
+    return matchesSearch && matchesRole;
   });
 
   return (
@@ -55,7 +55,7 @@ export default function UsersClient({ users }: { users: SanitizedUser[] }) {
         <h2 className="text-lg font-semibold">User Management</h2>
         <p className="text-gray-500 text-sm mt-1">Manage user accounts and access permissions</p>
       </div>
-      
+
       <div className="p-6 border-b flex flex-wrap items-center justify-between gap-4">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
@@ -67,11 +67,12 @@ export default function UsersClient({ users }: { users: SanitizedUser[] }) {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        
+
         <div className="flex space-x-3">
-          
-          
           <select
+            name="roleFilter"
+            id="roleFilter"
+            title="Filter by Role"
             className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             value={roleFilter}
             onChange={(e) => setRoleFilter(e.target.value)}
@@ -80,11 +81,9 @@ export default function UsersClient({ users }: { users: SanitizedUser[] }) {
             <option value="admin">Admin</option>
             <option value="regular">Regular</option>
           </select>
-          
-          
         </div>
       </div>
-      
+
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
@@ -107,21 +106,21 @@ export default function UsersClient({ users }: { users: SanitizedUser[] }) {
                 </td>
                 <td className="px-6 py-4 text-sm">
                   <div className="flex space-x-2">
-                    <button 
+                    <button
                       className="p-1 rounded-full hover:bg-gray-100"
                       onClick={() => handleRoleChange(user._id, 'admin')}
                       title="Activate User"
                     >
                       <UserCheck className="h-4 w-4 text-green-500" />
                     </button>
-                    <button 
+                    <button
                       className="p-1 rounded-full hover:bg-gray-100"
                       onClick={() => handleRoleChange(user._id, 'regular')}
                       title="Change to Regular"
                     >
                       <UserX className="h-4 w-4 text-red-500" />
                     </button>
-                    
+
                   </div>
                 </td>
               </tr>
@@ -129,12 +128,12 @@ export default function UsersClient({ users }: { users: SanitizedUser[] }) {
           </tbody>
         </table>
       </div>
-      
+
       <div className="p-6 flex items-center justify-between border-t">
         <p className="text-sm text-gray-500">
           Showing {filteredUsers.length} of {users.length} users
         </p>
-        
+
         <div className="flex space-x-2">
           <button className="px-3 py-1 border rounded hover:bg-gray-50">Previous</button>
           <button className="px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700">1</button>

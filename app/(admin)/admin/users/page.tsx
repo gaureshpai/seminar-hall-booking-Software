@@ -1,6 +1,7 @@
 "use server";
+
 import { getUsers } from '@/actions/adminActions';
-import UsersClient from './_components/UsersClient';
+import UsersClient from '../../../../components/UsersClient';
 
 export default async function Page() {
   const users = await getUsers(); 

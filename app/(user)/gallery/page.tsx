@@ -5,8 +5,8 @@ import GallerySection from '@/components/gallery/GallerySection'
 const page = () => {
   return (
     <div>
-      <Breadcrumb/>
-      <GallerySection/>
+      <Breadcrumb />
+      <GallerySection />
     </div>
   )
 }

@@ -1,4 +1,3 @@
-// app/(auth)/sign-in/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -32,7 +31,6 @@ export default function SignInPage() {
 
   return (
     <div className="flex font-poppins min-h-screen">
-      {/* Left Section */}
       <div className="w-full md:w-1/2 bg-white p-10 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full">
           <div className="flex flex-row gap-3">
@@ -46,16 +44,13 @@ export default function SignInPage() {
                 Welcome Back
               </h2>
               <p className="text-sm text-gray-600 mb-6">
-              Don't have an account?{" "}
-              <Link href="/sign-up" className="text-blue-600 hover:underline">
-                Sign Up
-              </Link>
+                Don't have an account?{" "}
+                <Link href="/sign-up" className="text-blue-600 hover:underline">
+                  Sign Up
+                </Link>
               </p>
             </div>
-            
-
           </div>
-          
 
           <div className="relative text-center text-sm text-gray-400 mb-6">
             <span className="bg-white px-2 z-10 relative">Login to your account</span>
@@ -99,14 +94,12 @@ export default function SignInPage() {
         </div>
       </div>
 
-      {/* Right Section */}
       <div className="hidden md:flex w-1/2 bg-[url('/images/loginPic4.avif')] bg-cover bg-center items-center justify-center relative">
         <div className="absolute bottom-10 left-10 text-gray-950 max-w-xs">
           <h3 className="text-xl font-semibold mb-2">All your Seminar Hall bookings. One unified experience.</h3>
           <p className="text-sm">
             Fast, flexible, and secure - Hall Bookings .
           </p>
-
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 "use client";
+
 import { Booking, updateBookingStatus } from '@/actions/adminActions';
 import { CheckCircle, Search, XCircle } from 'lucide-react';
 import React, { useState } from 'react';
@@ -9,20 +10,20 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
   const [localBookings, setLocalBookings] = useState(bookings);
 
   const filteredBookings = localBookings.filter(booking => {
-    const matchesSearch = 
-      booking.Hall.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    const matchesSearch =
+      booking.Hall.toLowerCase().includes(searchQuery.toLowerCase()) ||
       booking.FacultyIncharge.toLowerCase().includes(searchQuery.toLowerCase()) ||
       booking.Event.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    const matchesStatus = 
-      statusFilter === 'all' || 
+
+    const matchesStatus =
+      statusFilter === 'all' ||
       booking.status.toLowerCase() === statusFilter.toLowerCase();
-    
+
     return matchesSearch && matchesStatus;
   });
 
   const getStatusBadgeClass = (status: string) => {
-    switch(status.toLowerCase()) {
+    switch (status.toLowerCase()) {
       case 'approved':
         return 'bg-green-100 text-green-800';
       case 'pending':
@@ -37,10 +38,10 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
   const handleStatusChange = async (bookingId: string, newStatus: string) => {
     try {
       await updateBookingStatus(bookingId, newStatus);
-      setLocalBookings(prev => 
-        prev.map(booking => 
-          booking.id === bookingId 
-            ? { ...booking, status: newStatus } 
+      setLocalBookings(prev =>
+        prev.map(booking =>
+          booking.id === bookingId
+            ? { ...booking, status: newStatus }
             : booking
         )
       );
@@ -56,7 +57,7 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
         <h2 className="text-lg font-semibold">Manage Bookings</h2>
         <p className="text-gray-500 text-sm mt-1">Review and process seminar hall booking requests</p>
       </div>
-      
+
       <div className="p-6 border-b flex flex-wrap items-center justify-between gap-4">
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
@@ -68,9 +69,12 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        
+
         <div className="flex space-x-3">
           <select
+            name="statusFilter"
+            id="statusFilter"
+            title='Filter by Status'
             className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
@@ -80,10 +84,10 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
             <option value="approved">Approved</option>
             <option value="rejected">Rejected</option>
           </select>
-          
+
         </div>
       </div>
-      
+
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
@@ -114,13 +118,15 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
                 </td>
                 <td className="px-6 py-4 text-sm">
                   <div className="flex space-x-2">
-                    <button 
+                    <button
+                      title='Approve Booking'
                       className="p-1 rounded-full hover:bg-gray-100"
                       onClick={() => handleStatusChange(booking.id, 'approved')}
                     >
                       <CheckCircle className="h-4 w-4 text-green-500" />
                     </button>
-                    <button 
+                    <button
+                      title='Approve Booking'
                       className="p-1 rounded-full hover:bg-gray-100"
                       onClick={() => handleStatusChange(booking.id, 'rejected')}
                     >
@@ -133,12 +139,12 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
           </tbody>
         </table>
       </div>
-      
+
       <div className="p-6 flex items-center justify-between border-t">
         <p className="text-sm text-gray-500">
           Showing {filteredBookings.length} of {localBookings.length} bookings
         </p>
-        
+
         <div className="flex space-x-2">
           <button className="px-3 py-1 border rounded hover:bg-gray-50">Previous</button>
           <button className="px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700">1</button>

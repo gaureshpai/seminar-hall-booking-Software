@@ -1,7 +1,7 @@
 import mongoose, { Document, Schema } from "mongoose";
 import { string } from "zod";
 
-export interface IBooking extends Document{
+export interface IBooking extends Document {
     userId: mongoose.Schema.Types.ObjectId;
     Date: Date;
     Time: String;
@@ -52,10 +52,10 @@ const BookingSchema: Schema<IBooking> = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['pending','approved', 'rejected'],
+        enum: ['pending', 'approved', 'rejected'],
         default: 'pending'
     },
-}, {timestamps: true})
+}, { timestamps: true })
 
 const BookingModel = mongoose.models.Booking || mongoose.model("Booking", BookingSchema);
 

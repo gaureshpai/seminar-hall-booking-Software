@@ -2,8 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Users } from 'lucide-react'
+import { Users } from 'lucide-react'
 import Image from "next/image"
 
 interface Hall {
