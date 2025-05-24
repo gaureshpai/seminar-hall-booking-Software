@@ -1,25 +1,48 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Calendar, 
   Clock, 
   CheckCircle, 
   AlertTriangle, 
 } from 'lucide-react';
+import { Booking } from '@/actions/adminActions';
 
 
+export default function DataOverview({ bookings }: { bookings: Booking[] }) {
+    const tBookings = bookings.length;
 
-const dashboardStats = [
-  { title: 'Total Bookings', value: 187, icon: <Calendar className="h-6 w-6 text-blue-500" /> },
-  { title: 'Pending Approvals', value: 12, icon: <AlertTriangle className="h-6 w-6 text-amber-500" /> },
-  { title: 'Halls Available', value: 5, icon: <CheckCircle className="h-6 w-6 text-green-500" /> },
-  { title: 'Today\'s Events', value: 3, icon: <Clock className="h-6 w-6 text-purple-500" /> }
-];
-
-
-export default function AdminDashboard() {
-
-
+  const dashboardStats = [
+    { 
+      title: 'Total Bookings', 
+      value: tBookings, 
+      icon: <Calendar className="h-6 w-6 text-blue-500" /> 
+    },
+    { 
+      title: 'Pending Approvals', 
+      value: bookings.filter(booking => booking.status === "pending").length, 
+      icon: <AlertTriangle className="h-6 w-6 text-amber-500" /> 
+    },
+    { 
+    title: 'Halls Available', 
+    value: Math.max(0, 3 - new Set(
+        bookings
+        .filter(booking => booking.status === "approved")
+        .map(booking => booking.Hall)
+    ).size), 
+    icon: <CheckCircle className="h-6 w-6 text-green-500" /> 
+    },
+    { 
+        title: "Today's Events", 
+        value: bookings.filter(booking => {
+          const bookingDate = new Date(booking.Date).toISOString().split('T')[0];
+          const today = new Date().toISOString().split('T')[0];
+          return bookingDate === today;
+        }).length, 
+        icon: <Clock className="h-6 w-6 text-purple-500" /> 
+      }
+      
+  ];
   return (
     <div className="flex h-screen bg-gray-50">
       <div className="flex-1 flex flex-col overflow-hidden">

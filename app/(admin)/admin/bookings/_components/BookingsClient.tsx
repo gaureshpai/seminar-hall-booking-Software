@@ -37,7 +37,6 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
   const handleStatusChange = async (bookingId: string, newStatus: string) => {
     try {
       await updateBookingStatus(bookingId, newStatus);
-      // Update local state to reflect the change without a page refresh
       setLocalBookings(prev => 
         prev.map(booking => 
           booking.id === bookingId 
@@ -82,9 +81,6 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
             <option value="rejected">Rejected</option>
           </select>
           
-          <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
-            Add New Booking
-          </button>
         </div>
       </div>
       
