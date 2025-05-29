@@ -35,7 +35,7 @@
     "tailwind-merge": "^3.3.0",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.24.4"
+    "zod": "^3.25.28"
   },
   "devDependencies": {
     "@types/nodemailer": "^6.4.17",
