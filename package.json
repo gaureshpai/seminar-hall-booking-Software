@@ -21,7 +21,7 @@
     "clsx": "^2.1.1",
     "dotenv": "^16.5.0",
     "lucide-react": "^0.511.0",
-    "mongoose": "^8.14.1",
+    "mongoose": "^8.15.1",
     "next": "^15.3.2",
     "next-auth": "^4.24.11",
     "nodemailer": "^6.10.1",
