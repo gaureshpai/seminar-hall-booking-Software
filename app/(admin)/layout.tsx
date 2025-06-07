@@ -1,57 +1,66 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PieChart, Calendar, Users } from "lucide-react";
+import { PieChart, Calendar, Users, LogOut, User } from "lucide-react";
+import { useSession, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      await signOut({
+        callbackUrl: "/sign-in", 
+        redirect: true
+      });
+    } catch (error) {
+      console.error("Logout error:", error);
+      
+      router.push("/sign-in");
+    }
+  };
+  
+  if (status === "unauthenticated" || session?.user?.isAdmin !== "admin") {
+    router.push("/");
+    return null;
+  }
+  
+  const userDisplayName = session?.user?.email || session?.user?.username || "Admin User";
 
   return (
-    <div className="flex flex-col">
-      <div className=" bg-white shadow-sm"></div>
-      <div className="flex h-screen">
-        <aside className=" bg-[#04091e] h-[100%] text-white flex  flex-col p-3">
-          <h2 className="text-xl text-center md:text-left md:pl-4 font-bold mb-1">AJIET</h2>
-          <h3 className="text-sm hidden md:text-left text-center md:pl-4 md:block">Admin Panel</h3>
-          <nav className="flex-1 p-4">
-            <ul className="space-y-2">
-              <li className="flex">
-                <Link
-                  href="/admin"
-                  className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${pathname === "/admin" ? "bg-indigo-700" : ""
-                    }`}
-                >
-                  <PieChart className="mr-3 h-5 w-5" />
-                  <span className="hidden md:block">Overview</span>
-                </Link>
-              </li>
-              <li className="flex">
-                <Link
-                  href="/admin/bookings"
-                  className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${pathname === "/admin/bookings" ? "bg-indigo-700" : ""
-                    }`}
-                >
-                  <Calendar className="mr-3 h-5 w-5" />
-                  <div className="hidden md:block">Bookings</div>
-                </Link>
-              </li>
-              <li className="flex">
-                <Link
-                  href="/admin/users"
-                  className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${pathname === "/admin/users" ? "bg-indigo-700" : ""
-                    }`}
-                >
-                  <Users className="mr-3 h-5 w-5" />
-                  <span className="hidden md:block">Users</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </aside>
+    <div className="min-h-screen bg-gray-100">
+      <nav className="bg-white shadow-md border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <h1 className="text-xl font-bold text-gray-900">
+                Seminar Hall Booking Admin Panel
+              </h1>
+            </div>
 
-        <main className="flex-1 bg-gray-100 p-6 overflow-y-auto">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2 text-gray-700">
+                <User className="h-5 w-5" />
+                <span className="text-sm font-medium">{userDisplayName}</span>
+              </div>
+              <button
+                onClick={handleLogout}
+                className="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-red-600 hover:bg-gray-100 rounded-md transition-colors"
+              >
+                <LogOut className="h-4 w-4" />
+                <span>Logout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div className="flex">
+        <main className="flex-1 p-8">
           {children}
         </main>
       </div>
