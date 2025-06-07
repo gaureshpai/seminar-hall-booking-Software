@@ -1,7 +1,12 @@
+"use client"
+
 import Link from 'next/link'
 import React from 'react'
+import { useSession } from 'next-auth/react'
 
 const GetStarted = () => {
+    const { data: session } = useSession();
+
     return (
         <div className="text-white max-w-5xl mx-auto flex flex-col items-center py-60 md:py-40">
             <h5 className="text-lg font-bold">
@@ -14,13 +19,15 @@ const GetStarted = () => {
                 Memories and lessons from our seminars last long. The seminar
                 hall is a place for learning and inspiration.
             </p>
-            <Link
-                href="/sign-up"
-                className="mt-8 bg-yellow-500 text-white py-3 px-10 hover:bg-yellow-600 transition duration-300 font-bold w-fit"
-                aria-label="Get Started"
-            >
-                Get Started
-            </Link>
+            {!session && (
+                <Link
+                    href="/sign-up"
+                    className="mt-8 bg-yellow-500 text-white py-3 px-10 hover:bg-yellow-600 transition duration-300 font-bold w-fit"
+                    aria-label="Get Started"
+                >
+                    Get Started
+                </Link>
+            )}
         </div>
     )
 }
