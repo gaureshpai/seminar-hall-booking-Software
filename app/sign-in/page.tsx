@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { signIn, getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -10,22 +10,39 @@ export default function SignInPage() {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setIsLoading(true);
 
-    const result = await signIn("credentials", {
-      identifier,
-      password,
-      redirect: false,
-    });
+    try {
+      const result = await signIn("credentials", {
+        identifier,
+        password,
+        redirect: false,
+      });
 
-    if (result?.error) {
-      setError("Invalid credentials");
-    } else {
-      router.push("/");
+      if (result?.error) {
+        setError("Invalid credentials");
+        setIsLoading(false);
+        return;
+      }
+
+      const session = await getSession();
+
+      if (session?.user?.isAdmin === "admin") {
+        router.push("/admin");
+      } else {
+        router.push("/");
+      }
+    } catch (error) {
+      console.error("Sign-in error:", error);
+      setError("An error occurred during sign-in");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -58,7 +75,11 @@ export default function SignInPage() {
           </div>
 
           <form onSubmit={handleSignIn} className="space-y-4">
-            {error && <p className="text-red-500 text-sm">{error}</p>}
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-600 px-3 py-2 rounded text-sm">
+                {error}
+              </div>
+            )}
 
             <div>
               <label className="text-sm font-medium text-gray-700">Email</label>
@@ -67,8 +88,9 @@ export default function SignInPage() {
                 placeholder="you@example.com"
                 value={identifier}
                 onChange={(e) => setIdentifier(e.target.value)}
-                className="block w-full p-2 border border-gray-300 rounded mt-1 text-sm"
+                className="block w-full p-2 border border-gray-300 rounded mt-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
+                disabled={isLoading}
               />
             </div>
 
@@ -79,16 +101,25 @@ export default function SignInPage() {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="block w-full p-2 border border-gray-300 rounded mt-1 text-sm"
+                className="block w-full p-2 border border-gray-300 rounded mt-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
+                disabled={isLoading}
               />
             </div>
 
             <Button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={isLoading}
             >
-              Sign In
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                  Signing in...
+                </div>
+              ) : (
+                "Sign In"
+              )}
             </Button>
           </form>
         </div>
