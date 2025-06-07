@@ -9,16 +9,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="flex flex-col">
       <div className=" bg-white shadow-sm"></div>
-
-      <div className="flex flex-grow">
-        <aside className="w-64 bg-[#04091e] text-white flex flex-col p-5">
-          <h2 className="text-xl font-bold mb-1">AJIET</h2>
-          <h3 className="text-sm">Admin Panel</h3>
+      <div className="flex h-screen">
+        <aside className=" bg-[#04091e] h-[100%] text-white flex  flex-col p-3">
+          <h2 className="text-xl text-center md:text-left md:pl-4 font-bold mb-1">AJIET</h2>
+          <h3 className="text-sm hidden md:text-left text-center md:pl-4 md:block">Admin Panel</h3>
           <nav className="flex-1 p-4">
             <ul className="space-y-2">
-              <li>
+              <li className="flex">
                 <Link
                   href="/admin"
                   className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${
@@ -26,10 +25,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   }`}
                 >
                   <PieChart className="mr-3 h-5 w-5" />
-                  <span>Overview</span>
+                  <span className="hidden md:block">Overview</span>
                 </Link>
               </li>
-              <li>
+              <li className="flex">
                 <Link
                   href="/admin/bookings"
                   className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${
@@ -37,10 +36,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   }`}
                 >
                   <Calendar className="mr-3 h-5 w-5" />
-                  <span>Bookings</span>
+                  <div className="hidden md:block">Bookings</div>
                 </Link>
               </li>
-              <li>
+              <li className="flex">
                 <Link
                   href="/admin/users"
                   className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${
@@ -48,7 +47,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   }`}
                 >
                   <Users className="mr-3 h-5 w-5" />
-                  <span>Users</span>
+                  <span className="hidden md:block">Users</span>
                 </Link>
               </li>
             </ul>
