@@ -43,24 +43,8 @@ export default function DataOverview({ bookings }: { bookings: Booking[] }) {
       
   ];
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex bg-gray-50 p-12">
       <div className="flex-1 flex flex-col overflow-hidden">
-        <header className="bg-white shadow-sm z-10">
-          <div className="px-6 py-4 flex items-center justify-between">
-            <h1 className="text-xl font-semibold text-gray-800">
-              Admin Dashboard
-            </h1>
-            
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-800 font-bold">
-                  A
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
-        
         <main className="flex-1 overflow-y-auto p-6"> 
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
