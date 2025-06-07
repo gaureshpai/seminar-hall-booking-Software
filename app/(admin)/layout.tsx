@@ -20,9 +20,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <li className="flex">
                 <Link
                   href="/admin"
-                  className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${
-                    pathname === "/admin" ? "bg-indigo-700" : ""
-                  }`}
+                  className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${pathname === "/admin" ? "bg-indigo-700" : ""
+                    }`}
                 >
                   <PieChart className="mr-3 h-5 w-5" />
                   <span className="hidden md:block">Overview</span>
@@ -31,9 +30,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <li className="flex">
                 <Link
                   href="/admin/bookings"
-                  className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${
-                    pathname === "/admin/bookings" ? "bg-indigo-700" : ""
-                  }`}
+                  className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${pathname === "/admin/bookings" ? "bg-indigo-700" : ""
+                    }`}
                 >
                   <Calendar className="mr-3 h-5 w-5" />
                   <div className="hidden md:block">Bookings</div>
@@ -42,9 +40,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <li className="flex">
                 <Link
                   href="/admin/users"
-                  className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${
-                    pathname === "/admin/users" ? "bg-indigo-700" : ""
-                  }`}
+                  className={`flex items-center w-full p-3 rounded-lg hover:bg-indigo-700 ${pathname === "/admin/users" ? "bg-indigo-700" : ""
+                    }`}
                 >
                   <Users className="mr-3 h-5 w-5" />
                   <span className="hidden md:block">Users</span>

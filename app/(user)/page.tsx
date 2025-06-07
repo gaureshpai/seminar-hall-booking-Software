@@ -1,4 +1,3 @@
-import Link from "next/link";
 import GetStarted from "@/components/Home/GetStarted";
 import BooktheHall from "@/components/Home/BooktheHall";
 import Halls from "@/components/Home/Halls";

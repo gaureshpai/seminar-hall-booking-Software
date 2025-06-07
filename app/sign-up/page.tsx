@@ -110,7 +110,7 @@ export default function SignUp() {
 
       <div className="hidden md:flex w-1/2 bg-[url('/images/loginPic4.avif')]  bg-cover bg-center items-center justify-center relative">
 
-        <div className="absolute bottom-10 left-10 text-gray-950  max-w-xs">
+        <div className="absolute bottom-10 left-10 text-gray-100  max-w-xs">
           <h3 className="text-xl font-semibold mb-2">Smart Seminar Hall Booking 2.0 . . </h3>
           <p className="text-sm">
             Say goodbye to manual scheduling! Easily book, manage, and monitor seminar halls in real-time — all in one place. Empower your campus or organization with a seamless, automated booking experience.

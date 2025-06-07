@@ -1,16 +1,16 @@
 import React from 'react'
 import Breadcrumb from '@/components/services/Breadcrumb'
-import BookingTable from '@/components/services/BookingTable'
 import Services from '@/components/services/Services'
 import ServiceFeatures from '@/components/services/ServiceFeatures'
+import BooktheHall from '@/components/Home/BooktheHall'
 
 const page = () => {
   return (
-    <div>
+    <div className='pb-16'>
       <Breadcrumb />
       <Services />
       <ServiceFeatures />
-      <BookingTable />
+      <BooktheHall />
     </div>
   )
 }

@@ -32,7 +32,6 @@ export async function saveBooking(content: IBooking): Promise<IBooking> {
 
   console.log(booking);
 
-
   const saved = await BookingModel.findOne({
     _id: booking._id
   });

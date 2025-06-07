@@ -1,5 +1,4 @@
 import mongoose, { Document, Schema } from "mongoose";
-import { string } from "zod";
 
 export interface IBooking extends Document {
     userId: mongoose.Schema.Types.ObjectId;

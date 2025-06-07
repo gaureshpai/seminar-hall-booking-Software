@@ -1,5 +1,5 @@
 import { NextAuthOptions } from "next-auth";
-import  CredentialsProvider  from "next-auth/providers/credentials";
+import CredentialsProvider from "next-auth/providers/credentials";
 import dbConnect from "@/lib/dbConnect";
 import bcrypt from 'bcryptjs'
 import UserModel from "@/models/User";
@@ -11,29 +11,29 @@ export const authOptions: NextAuthOptions = {
             name: 'Credentials',
             credentials: {
                 identifier: { label: "Email or Username", type: "text" },
-                password: {label: 'Password', type: 'password'}
+                password: { label: 'Password', type: 'password' }
             },
             async authorize(credentials: any): Promise<any> {
                 await dbConnect();
                 try {
                     const user = await UserModel.findOne({
                         $or: [
-                            {email: credentials.identifier},
-                            {username: credentials.identifier}
+                            { email: credentials.identifier },
+                            { username: credentials.identifier }
                         ]
                     })
                     console.log(credentials.identifier);
-                    
-                    if(!user){
+
+                    if (!user) {
                         throw new Error("No user found with this email or username");
                     }
                     const isPasswordCorrect = await bcrypt.compare(
                         credentials.password,
-                        user.password   
+                        user.password
                     )
                     if (!isPasswordCorrect) throw new Error("Incorrect password");
 
-                    return{
+                    return {
                         id: user._id.toString(),
                         email: user.email,
                         username: user.username,
@@ -46,16 +46,16 @@ export const authOptions: NextAuthOptions = {
         })
     ],
     callbacks: {
-        async jwt({token, user}) {
-            if(user) {
+        async jwt({ token, user }) {
+            if (user) {
                 token.sub = user.id?.toString();
                 token.username = user.username;
                 token.isAdmin = user.isAdmin;
             }
             return token
         },
-        async session({session, token}) {
-            if(token){
+        async session({ session, token }) {
+            if (token) {
                 session.user = session.user || {};
                 session.user.id = token.sub;
                 session.user.username = token.username
@@ -71,5 +71,5 @@ export const authOptions: NextAuthOptions = {
     pages: {
         signIn: "/sign-in"
     }
-    
+
 }

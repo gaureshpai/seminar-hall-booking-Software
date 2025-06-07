@@ -95,7 +95,7 @@ export default function SignInPage() {
       </div>
 
       <div className="hidden md:flex w-1/2 bg-[url('/images/loginPic4.avif')] bg-cover bg-center items-center justify-center relative">
-        <div className="absolute bottom-10 left-10 text-gray-950 max-w-xs">
+        <div className="absolute bottom-10 left-10 text-gray-100 max-w-xs">
           <h3 className="text-xl font-semibold mb-2">All your Seminar Hall bookings. One unified experience.</h3>
           <p className="text-sm">
             Fast, flexible, and secure - Hall Bookings .
