@@ -60,9 +60,21 @@ const Navbar = () => {
                                 {item.name}
                             </Link>
                         ))}
-                        <Link href={'/sign-in'} className='flex items-center gap-2'>
-                            <span className='md:flex hidden text-gray-700 text-sm hover:text-blue-500 focus:outline-none' onClick={() => signOut()}>SIGN OUT</span>
-                        </Link>
+
+                        {isSignedIn ? (
+                            <button
+                                className='md:flex hidden text-gray-700 text-sm hover:text-blue-500 focus:outline-none uppercase px-3 py-2'
+                                onClick={() => signOut()}
+                            >
+                                SIGN OUT
+                            </button>
+                        ) : (
+                            <Link href={'/sign-in'} className='flex items-center gap-2'>
+                                <span className='md:flex hidden text-gray-700 text-sm hover:text-blue-500 focus:outline-none uppercase px-3 py-2'>
+                                    SIGN IN
+                                </span>
+                            </Link>
+                        )}
                     </nav>
 
                     <button
@@ -73,8 +85,6 @@ const Navbar = () => {
                     </button>
 
                 </div>
-
-
 
                 {isMenuOpen && (
                     <div className="md:hidden flex flex-col items-center bg-white py-4 space-y-3 shadow-md">
@@ -88,10 +98,26 @@ const Navbar = () => {
                                 {item.name}
                             </Link>
                         ))}
-                        <Link href={'/sign-in'} className='flex items-center gap-2'>
-                            <span className='text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md transition-colors duration-200' onClick={() => signOut()}>Sign Out</span>
-                        </Link>
 
+                        {isSignedIn ? (
+                            <button
+                                className='text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md transition-colors duration-200'
+                                onClick={() => {
+                                    signOut();
+                                    setIsMenuOpen(false);
+                                }}
+                            >
+                                Sign Out
+                            </button>
+                        ) : (
+                            <Link
+                                href={'/sign-in'}
+                                className='text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md transition-colors duration-200'
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Sign In
+                            </Link>
+                        )}
                     </div>
                 )}
 
