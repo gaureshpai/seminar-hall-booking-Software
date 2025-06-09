@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import {  LogOut, User } from "lucide-react";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from 'next/link';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -32,7 +33,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <h1 className="text-md md:text-xl font-bold text-gray-900">
-                Seminar Hall Booking Admin Panel
+                <Link href="/">
+                  Seminar Hall Booking Admin Panel
+                </Link>
               </h1>
             </div>
 
