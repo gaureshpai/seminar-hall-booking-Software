@@ -6,6 +6,17 @@ export interface IContact extends Document {
     email: string;
     subject: string;
     message: string;
+    createdAt: Date;
+}
+
+export interface IContactClient {
+  _id: string;
+  userId: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  createdAt: string;
 }
 
 const ContactSchema : Schema<IContact> = new mongoose.Schema({
