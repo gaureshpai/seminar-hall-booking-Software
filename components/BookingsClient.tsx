@@ -108,7 +108,7 @@ export default function BookingsClient({ bookings }: { bookings: Booking[] }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow p-12">
+    <div className="bg-white rounded-lg mb-4 shadow p-12">
       <div className="p-6 border-b">
         <h2 className="text-lg font-semibold">Manage Bookings</h2>
         <p className="text-gray-500 text-sm mt-1">Review and process seminar hall booking requests</p>
