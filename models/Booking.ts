@@ -19,7 +19,6 @@ const BookingSchema: Schema<IBooking> = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true,
-        unique: true,
     },
     Date: {
         type: Date,
