@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
-import "./globals.css";
-import AuthProvider from "@/context/AuthProvider";
-import {Toaster} from 'react-hot-toast';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 const poppins = Poppins({
-  variable: '--font-poppins', 
+  variable: '--font-poppins',
   subsets: ['latin'],
-  weight: ['400', '700'], 
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -31,17 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      
-      <AuthProvider>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-white text-gray-900 tracking-tight`}
-        >
-          <Toaster position="bottom-right"/>
-          {children}
-        </body>
-      </AuthProvider>
-      
-    </html>
+      <div className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-white text-gray-900 tracking-tight`}>
+        <Navbar />
+        {children}
+        <Footer />
+      </div>
   );
 }
