@@ -43,7 +43,7 @@ export default function DataOverview({ bookings }: { bookings: Booking[] }) {
       
   ];
   return (
-    <div className="flex bg-gray-50 p-12">
+    <div className="flex bg-gray-50 mb-4 p-12">
       <div className="flex-1 flex flex-col overflow-hidden">
         <main className="flex-1 overflow-y-auto p-6"> 
             <div className="space-y-6">
