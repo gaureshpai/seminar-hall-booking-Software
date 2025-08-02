@@ -13,20 +13,25 @@ export const authOptions: NextAuthOptions = {
                 identifier: { label: "Email or Username", type: "text" },
                 password: { label: 'Password', type: 'password' }
             },
-            async authorize(credentials: any): Promise<any> {
+            async authorize(credentials: { identifier: string; password: string } | undefined) {
+
                 await dbConnect();
                 try {
                     const user = await UserModel.findOne({
                         $or: [
-                            { email: credentials.identifier },
-                            { username: credentials.identifier }
+                            { email: credentials?.identifier },
+                            { username: credentials?.identifier }
                         ]
                     })
-                    console.log(credentials.identifier);
+                    console.log(credentials?.identifier);
 
                     if (!user) {
                         throw new Error("No user found with this email or username");
                     }
+                    if (!credentials?.password) {
+                        throw new Error("Password is required");
+                    }
+
                     const isPasswordCorrect = await bcrypt.compare(
                         credentials.password,
                         user.password
@@ -39,12 +44,14 @@ export const authOptions: NextAuthOptions = {
                         username: user.username,
                         isAdmin: user.isAdmin
                     };
-                } catch (error: any) {
-                    throw new Error(error.message)
+                } catch (error) {
+                    if (error instanceof Error) {
+                        throw new Error(error.message);
+                    }
+                    throw new Error("Unknown error");
                 }
             }
-        })
-    ],
+        })],
     callbacks: {
         async jwt({ token, user }) {
             if (user) {

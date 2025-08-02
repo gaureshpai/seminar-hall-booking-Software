@@ -5,6 +5,7 @@ import { signIn, getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SignInPage() {
   const [identifier, setIdentifier] = useState("");
@@ -51,7 +52,9 @@ export default function SignInPage() {
       <div className="w-full md:w-1/2 bg-white p-10 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full">
           <div className="flex flex-row gap-3">
-            <img
+            <Image
+              width={60}
+              height={60}
               src="/images/logo.png"
               alt="Seminar hall Logo"
               className="h-[60px] mb-8"
@@ -61,7 +64,7 @@ export default function SignInPage() {
                 Welcome Back
               </h2>
               <p className="text-sm text-gray-600 mb-6">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <Link href="/sign-up" className="text-blue-600 hover:underline">
                   Sign Up
                 </Link>

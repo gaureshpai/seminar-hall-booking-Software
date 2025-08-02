@@ -1,14 +1,12 @@
 "use client";
-import React, {useEffect} from "react";
-import { usePathname } from "next/navigation";
+import React from "react";
 import {  LogOut, User } from "lucide-react";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from 'next/link';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const router = useRouter();
 
   const handleLogout = async () => {

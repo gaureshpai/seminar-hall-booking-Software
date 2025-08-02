@@ -18,8 +18,23 @@ type BookingFormValues = {
     Hall: string;
 };
 
+type BookingPayload = {
+    userId: string;
+    Date: Date;
+    Time: string;
+    Department: string;
+    Event: string;
+    FacultyIncharge: string;
+    Hall: string;
+    email: string;
+    status: string;
+    createdAt: string;
+    updatedAt: string;
+};
+
+
 const BooktheHall = () => {
-    const { data: session, status } = useSession();
+    const { data: session } = useSession();
     const router = useRouter();
     const { register, handleSubmit, reset } = useForm<BookingFormValues>();
     const [loading, setLoading] = useState(false);
@@ -37,10 +52,22 @@ const BooktheHall = () => {
 
         setLoading(true);
         try {
-            await saveBooking({
-                ...data,
+            const bookingPayload: BookingPayload = {
+                userId: session.user?.id ?? "unknown",
                 Date: new Date(data.Date),
-            } as any);
+                Time: data.Time,
+                Department: data.Department,
+                Event: data.Event,
+                FacultyIncharge: data.FacultyIncharge,
+                Hall: data.Hall,
+                email: data.email,
+                status: "pending",
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
+            };
+
+            await saveBooking(bookingPayload);
+
             toast.success("Booking successful!");
             try {
                 const emailRes = await sendMail(
@@ -55,9 +82,11 @@ const BooktheHall = () => {
                 toast.error("Booking saved but email failed.");
             }
             reset();
-        } catch (err: any) {
-            toast.error("Booking failed: You already may have booked a Hall");
-            console.error("Booking Failed:", err.message);
+        } catch (err: unknown) {
+            let message = "Booking failed";
+            if (err instanceof Error) message = err.message;
+            toast.error(`${message}: You may have already booked a Hall`);
+            console.error("Booking Failed:", message);
         } finally {
             setLoading(false);
         }

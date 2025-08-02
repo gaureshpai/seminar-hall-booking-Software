@@ -34,7 +34,7 @@ const AboutSection: React.FC = () => {
                                     administration.
                                 </li>
                                 <li>
-                                    Sustainability by minimizing the use of paper, contributing to AJIET's commitment to eco-friendly
+                                    Sustainability by minimizing the use of paper, contributing to AJIET&apos;s commitment to eco-friendly
                                     practices.
                                 </li>
                             </ul>

@@ -87,8 +87,8 @@ const BookingTable = () => {
                 </div>
             </div>
             <div className='text-center mt-[30px]'>
-                <p className="text-gray-800 text-3xl font-poppins py-5">"Effortless Space Reservations for Every Occasion"</p>
-                <p className="text-gray-500 text-xl font-poppins py-3 px-6">We make booking seminar halls easy and hassle-free. Whether it's for events, meetings, or gatherings, our platform ensures a smooth experience for students and faculty alike.</p>
+                <p className="text-gray-800 text-3xl font-poppins py-5">&quot;Effortless Space Reservations for Every Occasion&quot;</p>
+                <p className="text-gray-500 text-xl font-poppins py-3 px-6">We make booking seminar halls easy and hassle-free. Whether it&apos;s for events, meetings, or gatherings, our platform ensures a smooth experience for students and faculty alike.</p>
             </div>
         </div>
     )
