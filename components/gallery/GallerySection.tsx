@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const GallerySection = () => {
@@ -26,12 +27,15 @@ const GallerySection = () => {
                 </div>
                 <div className="sm:columns-3 mx-[50px] columns-1 gap-10 space-y-12">
                     {images.map((src, index) => (
-                        <img
-                            key={index}
-                            src={src}
-                            className={`${index % 2 === 0 ? "h-64" : "h-100"} w-full object-cover rounded-lg`}
-                            alt={`Gallery ${index + 1}`}
-                        />
+                        <div key={index} className={`relative w-full ${index % 2 === 0 ? "h-64" : "h-[400px]"}`}>
+                            <Image
+                                src={src}
+                                fill
+                                className="object-cover rounded-lg"
+                                alt={`Gallery ${index + 1}`}
+                            />
+                        </div>
+
                     ))}
                 </div>
             </div>

@@ -9,4 +9,4 @@ services:
       - EMAIL_PASS=${EMAIL_PASS}
     ports:
       - "3000:3000"
-     
+

@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function SignUp() {
   const router = useRouter();
@@ -30,7 +31,7 @@ export default function SignUp() {
 
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     try {
-      const res = await axios.post("/api/sign-up", data);
+      await axios.post("/api/sign-up", data);
       router.push("/sign-in");
     } catch (err) {
       console.error("Sign-up error", err);
@@ -42,7 +43,9 @@ export default function SignUp() {
       <div className="w-full md:w-1/2 bg-white p-10 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full">
           <div className="flex flex-row gap-3">
-            <img
+            <Image
+              width={60}
+              height={60}
               src="/images/logo.png"
               alt="Logo"
               className="h-[60px] mb-8"
