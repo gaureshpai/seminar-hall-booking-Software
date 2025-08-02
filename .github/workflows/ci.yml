@@ -10,7 +10,7 @@ jobs:
     build-and-deploy:
         runs-on: "ubuntu-latest"
         env: 
-            DATABASE_URL: ${{ secrets.MONGODB_URI }}
+            MONGODB_URI: ${{ secrets.MONGODB_URI }}
         
         steps: 
             - name: Checkout
