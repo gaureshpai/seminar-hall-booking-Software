@@ -42,11 +42,7 @@ export default function SignUp() {
       <div className="w-full md:w-1/2 bg-white p-10 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full">
           <div className="flex flex-row gap-3">
-            <img
-              src="/images/logo.png"
-              alt="Logo"
-              className="h-[60px] mb-8"
-            />
+            <img src="/images/logo.jpg" alt="Logo" className="h-[60px] mb-8" />
             <div className="flex flex-col">
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 Create your account
@@ -61,7 +57,9 @@ export default function SignUp() {
           </div>
 
           <div className="relative text-center text-sm text-gray-400 mb-6">
-            <span className="bg-white px-2 z-10 relative">Sign-Up an account</span>
+            <span className="bg-white px-2 z-10 relative">
+              Sign-Up an account
+            </span>
             <div className="absolute left-0 right-0 top-1/2 border-t border-gray-200 transform -translate-y-1/2" />
           </div>
 
@@ -100,7 +98,10 @@ export default function SignUp() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+              <Button
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+              >
                 Sign Up
               </Button>
             </form>
@@ -109,11 +110,14 @@ export default function SignUp() {
       </div>
 
       <div className="hidden md:flex w-1/2 bg-[url('/images/loginPic4.avif')]  bg-cover bg-center items-center justify-center relative">
-
         <div className="absolute bottom-10 left-10 text-gray-100  max-w-xs">
-          <h3 className="text-xl font-semibold mb-2">Smart Seminar Hall Booking 2.0 . . </h3>
+          <h3 className="text-xl font-semibold mb-2">
+            Smart Seminar Hall Booking 2.0 . .{" "}
+          </h3>
           <p className="text-sm">
-            Say goodbye to manual scheduling! Easily book, manage, and monitor seminar halls in real-time — all in one place. Empower your campus or organization with a seamless, automated booking experience.
+            Say goodbye to manual scheduling! Easily book, manage, and monitor
+            seminar halls in real-time — all in one place. Empower your campus
+            or organization with a seamless, automated booking experience.
           </p>
         </div>
       </div>
