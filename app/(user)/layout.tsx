@@ -14,14 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 const poppins = Poppins({
-  variable: '--font-poppins',
-  subsets: ['latin'],
-  weight: ['400', '700'],
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Seminar Hall Booking System AJIET",
-  description: "Seminar Hall Booking System AJIET developed by the development team dept of CSE AJIET",
+  description:
+    "Seminar Hall Booking System AJIET developed by the development team dept of CSE AJIET",
 };
 
 export default function RootLayout({
@@ -30,10 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <div className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-white text-gray-900 tracking-tight`}>
-        <Navbar />
-        {children}
-        <Footer />
-      </div>
+    <div
+      className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased bg-white text-gray-900 tracking-tight`}
+    >
+      <Navbar />
+      {children}
+      <Footer />
+    </div>
   );
 }

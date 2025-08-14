@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import type React from "react"
 import { useState } from "react"
@@ -22,27 +22,28 @@ const ContactForm = () => {
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-  }
+  };
 
-  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     console.log(e);
     try {
       const savedC = await saveContact({
         name: formData.name,
         email: formData.email,
         subject: formData.subject,
-        message: formData.message
-      })
+        message: formData.message,
+      });
       console.log(savedC);
       toast.success("Message Sent Successfully");
       setFormData({
@@ -52,12 +53,14 @@ const ContactForm = () => {
         message: "",
       });
     } catch (error) {
-      toast.error("An Error ocurred, try again")
+      toast.error("An Error ocurred, try again");
       console.log("An Error occured while sending, please try again", error);
-      throw new Error("An Error has occured while sending the form, PLease try again")
+      throw new Error(
+        "An Error has occured while sending the form, PLease try again"
+      );
     }
     console.log(formData);
-  }
+  };
 
   return (
     <div className="w-full">
@@ -111,7 +114,9 @@ const ContactForm = () => {
                     />
                   </svg>
                   <div>
-                    <p className="font-medium">AJ INSTITUTE OF ENGINEERING & TECHNOLOGY</p>
+                    <p className="font-medium">
+                      AJ INSTITUTE OF ENGINEERING & TECHNOLOGY
+                    </p>
                     <p className="text-sm text-muted-foreground">Mangaluru</p>
                   </div>
                 </div>
@@ -132,7 +137,9 @@ const ContactForm = () => {
                   </svg>
                   <div>
                     <p className="font-medium">0824 2455048</p>
-                    <p className="text-sm text-muted-foreground">Mon to Sat 9am to 5pm</p>
+                    <p className="text-sm text-muted-foreground">
+                      Mon to Sat 9am to 5pm
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -152,7 +159,9 @@ const ContactForm = () => {
                   </svg>
                   <div>
                     <p className="font-medium">support@Enigma.com</p>
-                    <p className="text-sm text-muted-foreground">Send us your query anytime!</p>
+                    <p className="text-sm text-muted-foreground">
+                      Send us your query anytime!
+                    </p>
                   </div>
                 </div>
               </div>
@@ -198,7 +207,10 @@ const ContactForm = () => {
                   className="min-h-[150px]"
                 />
                 <div className="text-right">
-                  <Button type="submit" className="rounded-none bg-yellow-500 text-white py-3 px-10 hover:bg-yellow-600 transition duration-300 font-bold w-fit">
+                  <Button
+                    type="submit"
+                    className="rounded-none bg-yellow-500 text-white py-3 px-10 hover:bg-yellow-600 transition duration-300 font-bold w-fit"
+                  >
                     Send Message
                   </Button>
                 </div>
@@ -208,7 +220,7 @@ const ContactForm = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default ContactForm;

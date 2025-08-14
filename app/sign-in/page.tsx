@@ -73,7 +73,9 @@ export default function SignInPage() {
           </div>
 
           <div className="relative text-center text-sm text-gray-400 mb-6">
-            <span className="bg-white px-2 z-10 relative">Login to your account</span>
+            <span className="bg-white px-2 z-10 relative">
+              Login to your account
+            </span>
             <div className="absolute left-0 right-0 top-1/2 border-t border-gray-200 transform -translate-y-1/2" />
           </div>
 
@@ -98,7 +100,9 @@ export default function SignInPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium text-gray-700">Password</label>
+              <label className="text-sm font-medium text-gray-700">
+                Password
+              </label>
               <input
                 type="password"
                 placeholder="••••••••"
@@ -128,9 +132,11 @@ export default function SignInPage() {
         </div>
       </div>
 
-      <div className="hidden md:flex w-1/2 bg-[url('/images/loginPic4.avif')] bg-cover bg-center items-center justify-center relative">
+      <div className="hidden md:flex w-1/2 bg-[url('/images/loginPic.jpg')] bg-cover bg-center items-center justify-center relative">
         <div className="absolute bottom-10 left-10 text-gray-100 max-w-xs">
-          <h3 className="text-xl font-semibold mb-2">All your Seminar Hall bookings. One unified experience.</h3>
+          <h3 className="text-xl font-semibold mb-2">
+            All your Seminar Hall bookings. One unified experience.
+          </h3>
           <p className="text-sm">
             Fast, flexible, and secure - Hall Bookings .
           </p>
