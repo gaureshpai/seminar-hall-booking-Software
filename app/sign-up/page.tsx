@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { signUpSchema } from "@/schemas/signUpSchema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,6 +8,7 @@ import * as z from "zod";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { AxiosError } from "axios";
 import {
   Form,
   FormField,
@@ -16,9 +18,13 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function SignUp() {
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -30,11 +36,19 @@ export default function SignUp() {
 
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     try {
-      const res = await axios.post("/api/sign-up", data);
+      await axios.post("/api/sign-up", data);
       router.push("/sign-in");
-    } catch (err) {
-      console.error("Sign-up error", err);
+    } catch (err: unknown) {
+      if (err instanceof AxiosError && err.response?.data?.message) {
+        form.setError("username", {
+          type: "manual",
+          message: err.response.data.message,
+        });
+      } else {
+        console.error("Sign-up error", err);
+      }
     }
+
   };
 
   return (
@@ -42,7 +56,13 @@ export default function SignUp() {
       <div className="w-full md:w-1/2 bg-white p-10 flex flex-col justify-center">
         <div className="max-w-sm mx-auto w-full">
           <div className="flex flex-row gap-3">
-            <img src="/images/logo.jpg" alt="Logo" className="h-[60px] mb-8" />
+            <Image
+              width={60}
+              height={60}
+              src="/images/logo.jpg"
+              alt="Logo"
+              className="h-[60px] mb-8"
+            />
             <div className="flex flex-col">
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 Create your account
@@ -93,7 +113,20 @@ export default function SignUp() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-sm">Password</FormLabel>
-                    <Input type="password" {...field} />
+                    <div className="relative">
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        {...field}
+                        className="pr-10"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword((prev) => !prev)}
+                        className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500"
+                      >
+                        {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                      </button>
+                    </div>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -109,8 +142,8 @@ export default function SignUp() {
         </div>
       </div>
 
-      <div className="hidden md:flex w-1/2 bg-[url('/images/loginPic4.avif')]  bg-cover bg-center items-center justify-center relative">
-        <div className="absolute bottom-10 left-10 text-gray-100  max-w-xs">
+      <div className="hidden md:flex w-1/2 bg-[url('/images/loginPic.jpg')] bg-cover bg-center items-center justify-center relative">
+        <div className="absolute bottom-10 left-10 text-gray-100 max-w-xs">
           <h3 className="text-xl font-semibold mb-2">
             Smart Seminar Hall Booking 2.0 . .{" "}
           </h3>

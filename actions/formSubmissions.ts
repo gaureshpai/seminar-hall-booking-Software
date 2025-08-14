@@ -7,7 +7,17 @@ import { IBooking } from '../models/Booking';
 import { getServerSession } from "next-auth";
 import { transporter } from "@/lib/mailer";
 
-export async function saveBooking(content: IBooking): Promise<IBooking> {
+type BookingInput = {
+  Date: Date;
+  Time: string;
+  Department: string;
+  Event: string;
+  FacultyIncharge: string;
+  Hall: string;
+  email: string;
+};
+
+export async function saveBooking(content: BookingInput): Promise<IBooking> {
   await dbConnect();
   const session = await getServerSession(authOptions);
   console.log(session);
