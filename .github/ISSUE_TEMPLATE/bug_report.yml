@@ -1,11 +1,11 @@
 name: Bug Report
-description: File a bug report for the Seminar Hall Booking Website
+description: File a bug report for the HallGrid Website
 body:
   - type: markdown
     attributes:
       value: |
         <div align="center">
-          <h2>Seminar Hall Booking Software — Bug Report</h2>
+          <h2>HallGrid — Bug Report</h2>
           <p><em>Thanks for taking the time to help us improve the platform!</em></p>
         </div>
 
@@ -80,7 +80,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: DK24 Website Version
+      label: HallGrid Website Version
       description: Provide the version if visible (e.g., `1.0.0-beta`). Leave blank if unknown.
       placeholder: e.g. 1.0.0-beta
     validations:
