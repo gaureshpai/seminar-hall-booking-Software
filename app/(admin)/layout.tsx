@@ -1,40 +1,46 @@
 "use client";
-import React, {useEffect} from "react";
-import { usePathname } from "next/navigation";
-import {  LogOut, User } from "lucide-react";
+import React from "react";
+import { LogOut, User } from "lucide-react";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from 'next/link';
+import Image from "next/image";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const router = useRouter();
 
   const handleLogout = async () => {
     try {
       await signOut({
-        callbackUrl: "/sign-in", 
+        callbackUrl: "/sign-in",
         redirect: true
       });
     } catch (error) {
       console.error("Logout error:", error);
-      
+
       router.push("/sign-in");
     }
   };
-  
+
   const userDisplayName = session?.user?.email || session?.user?.username || "Admin User";
 
   return (
-    <div className="overflow-x-auto bg-gray-100">
+    <div className="overflow-x-auto font-poppins bg-gray-100">
       <nav className="w-full bg-white shadow-md border-b border-gray-200">
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <h1 className="text-md md:text-xl font-bold text-gray-900">
-                <Link href="/">
-                  Seminar Hall Booking Admin Panel
+            <div className="flex items-center flex-col">
+              <h1 className="text-md md:text-xl font-md text-gray-900">
+                <Link href="/" className="flex  items-center">
+                  <Image
+                    src="/images/logo.jpg"
+                    alt="Logo"
+                    width={60}
+                    height={50}
+                    className="p-2 h-[100%] relative left-1"
+                  />
+                  HallGrid Admin Panel
                 </Link>
               </h1>
             </div>

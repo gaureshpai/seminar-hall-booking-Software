@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const AboutSection = () => {
@@ -15,14 +16,16 @@ const AboutSection = () => {
                 <div className=' mr-20  align-top mb-10' >
                     <h2 className="text-5xl font-bold mb-4">About Us</h2>
                     <p className="text-2xl w-full text-gray-700">
-                        "Our seminar hall is a versatile and well-equipped space designed to host a variety of events,
+                        &quot;Our seminar hall is a versatile and well-equipped space designed to host a variety of events,
                         including educational programs, dance practices, rehearsals, and other activities. With spacious
-                        interiors and modern facilities, it provides an ideal environment for both professional events and creative performances."
+                        interiors and modern facilities, it provides an ideal environment for both professional events and creative performances.&quot;
                     </p>
                 </div>
                 <div className='w-auto m-1 sm:w-[400px]'>
-                    <img
-                        src="https://www.ajiet.edu.in/img/life-ajiet/seminar-hall.jpg"
+                    <Image
+                        width={600}
+                        height={400}
+                        src="/images/seminar-hall.jpg"
                         alt="Seminar Hall"
                         className="rounded-lg shadow-md"
                     />

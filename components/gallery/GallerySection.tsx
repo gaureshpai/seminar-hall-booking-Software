@@ -1,4 +1,5 @@
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 const GallerySection = () => {
   const images = [
@@ -10,8 +11,9 @@ const GallerySection = () => {
     "/images/gallery/02-1.jpg",
     "/images/gallery/01-1.jpg",
     "/images/gallery/06.jpg",
-    "/images/gallery/03-1.jpg",
-  ];
+    "/images/gallery/03-1.jpg"
+  ]
+
   return (
     <section className="py-16 mt-10 flex justify-center font-poppins">
       <div className="container w-[80rem] px-4">
@@ -23,15 +25,17 @@ const GallerySection = () => {
             Who are in extremely love with eco-friendly system.
           </p>
         </div>
-        <div className="sm:columns-3 mx-[50px] columns-1 gap-6 space-y-6">
+
+        <div className="sm:columns-3 mx-[50px] columns-1 gap-10 space-y-12">
           {images.map((src, index) => (
             <div
               key={index}
-              className="w-full aspect-[4/3] overflow-hidden rounded-lg"
+              className={`relative w-full ${index % 2 === 0 ? "h-64" : "h-[400px]"}`}
             >
-              <img
+              <Image
                 src={src}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover rounded-lg"
                 alt={`Gallery ${index + 1}`}
               />
             </div>
@@ -39,7 +43,7 @@ const GallerySection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default GallerySection;
+export default GallerySection

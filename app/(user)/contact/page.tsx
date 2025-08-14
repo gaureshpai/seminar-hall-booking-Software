@@ -1,12 +1,13 @@
 "use client";
 
-import type React from "react";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { saveContact } from "@/actions/contactActions";
-import toast from "react-hot-toast";
+import type React from "react"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { saveContact } from "@/actions/contactActions"
+import toast from "react-hot-toast"
+import Link from "next/link"
 
 type ContactFormData = {
   name: string;
@@ -71,9 +72,9 @@ const ContactForm = () => {
           <h2 className="text-3xl font-bold text-white">Contact Us</h2>
           <ol className="flex items-center space-x-2 mt-4">
             <li>
-              <a href="/" className="text-white font-bold">
+              <Link href="/" className="text-white font-bold">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="text-white font-bold">→</li>
             <li className="text-white font-bold">Contact Us</li>
